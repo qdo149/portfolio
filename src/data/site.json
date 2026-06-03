@@ -1,0 +1,173 @@
+{
+  "name": "Quynh Do",
+  "brand": "qxyxhdodesign",
+  "hero": {
+    "greeting": "Xin chào, I'm Quynh (kwin)",
+    "intro": "I'm a UI/UX designer with background in graphic design, dedicated to creating visually appealing and user-centric digital experiences. Assisting brands and products tell their stories through design."
+  },
+  "about": {
+    "heading": "Xin chào! I'm Quỳnh",
+    "bio": "I'm a product designer with a background in graphic design. I've always been drawn to the intersection of creativity and functionality, which is why I transitioned to product design. I love finding innovative solutions that blend visual appeal with problem-solving to create exceptional user experiences. Throughout my career, I've helped companies transform basic ideas into impactful products and features. My work has focused on enhancing the lives of end-users and driving business growth.",
+    "email": "hello@quynhdo.ca"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/do-quynh/",
+    "instagram": "https://www.instagram.com/qxyxhdodesign/",
+    "email": "mailto:hello@quynhdo.ca"
+  },
+  "assets": {
+    "logo": "https://www.quynhdo.ca/wp-content/uploads/2020/11/cropped-quynhdologo.png",
+    "avatar": "https://www.quynhdo.ca/wp-content/uploads/elementor/thumbs/ava-pa3a2nlhsjo22gwpv3hit66vkydrtleyxui92qr2jc.png"
+  },
+  "projects": [
+    {
+      "slug": "nab",
+      "title": "NAB",
+      "tagline": "Create Efficient Merchant Experiences for Small Businesses",
+      "thumb": "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7675-scaled.jpg",
+      "cardImage": "https://www.quynhdo.ca/wp-content/uploads/2026/05/home.jpg",
+      "summary": [
+        "At NAB, I worked on designing merchant solutions for small businesses across Australia and New Zealand, focusing on improving both customer-facing payment experiences and internal banking systems.\n  \n\n  \n\nMy role involved enhancing the digital merchant experience across NAB’s payment and commerce ecosystem, including EFTPOS, online payments, and merchant onboarding journeys. I collaborated closely with product managers, engineers, and business stakeholders to simplify complex workflows, improve usability, and create more seamless experiences for business customers.\n\n  \n\nAlongside customer-facing improvements, I also contributed to optimizing internal banker tools and operational systems to help support teams manage merchant services more efficiently. This included identifying friction points in existing workflows, streamlining service processes, and designing scalable experiences that balanced business goals with customer needs.\n\n  \n\nDue to the nature of the work and company confidentiality, I’m limited in what I can publicly share. However, beyond product delivery, I contributed to several initiatives focused on accessibility, AI enablement, and design education within the organization. If you'd like to learn more, please feel free to contact me on Linkedin or Email."
+      ],
+      "gallery": [
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7675-scaled.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7675-scaled.jpg 2560w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7675-300x225.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7675-1024x768.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7675-768x576.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7675-1536x1152.jpg 1536w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7675-2048x1536.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7664-e1779126327762.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7664-e1779126327762.jpg 1920w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7664-e1779126327762-300x225.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7664-e1779126327762-1024x769.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7664-e1779126327762-768x577.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7664-e1779126327762-1536x1154.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7665-e1779126353730.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7665-e1779126353730.jpg 1920w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7665-e1779126353730-300x225.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7665-e1779126353730-1024x769.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7665-e1779126353730-768x577.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_7665-e1779126353730-1536x1154.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1768.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1768.jpg 2560w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1768-300x225.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1768-1024x768.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1768-768x576.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1768-1536x1152.jpg 1536w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1768-2048x1536.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1518-e1779126716620.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1518-e1779126716620.jpg 1920w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1518-e1779126716620-300x225.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1518-e1779126716620-1024x769.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1518-e1779126716620-768x577.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2026/05/IMG_1518-e1779126716620-1536x1154.jpg"
+      ],
+      "legacyUrl": "https://www.quynhdo.ca/nab/"
+    },
+    {
+      "slug": "genex-member-portal",
+      "title": "GENEX Member Portal",
+      "tagline": "UX Case Study: GENEX Member Portal Design Project",
+      "thumb": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram.png",
+      "cardImage": "https://www.quynhdo.ca/wp-content/uploads/2023/10/home-genex-1.png",
+      "summary": [
+        "Role\n\n  In Q1 2023, I led a UI/UX project to build a member portal for GENEX, a global genetic and reproductive solutions provider for dairy and beef cattle producers. The project aimed to enhance communication between the company and its member-owners, fostering a community where product updates, promotions, and industry-related discussions can occur.",
+        "Team\n A UI/UX designer, 2 developers, a project manager\n\n  Timeline\nQ1 2023",
+        "Skills\n\n  • Web & Responsive Design\n\n  • UI/UX Design\n\n  • Information Architecture\n\n  • Prototyping\n\n  • Design System\n\n  • Product Thinking"
+      ],
+      "gallery": [
+        "https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram.png 688w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram-300x294.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606-150x150.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488-150x150.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933-150x150.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119-150x150.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-1.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-2.jpg"
+      ],
+      "legacyUrl": "https://www.quynhdo.ca/genex-member-portal/"
+    },
+    {
+      "slug": "shaw-direct",
+      "title": "Shaw Direct",
+      "tagline": "Shaw Direct - Plan Builder Improvement",
+      "thumb": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-2048x999.png",
+      "cardImage": "https://www.quynhdo.ca/wp-content/uploads/2023/10/home-shaw.png",
+      "summary": [
+        "Role\n\nI joined Shaw in 2022 as the sole UI/UX designer for Shaw Direct, where I was primarily responsible for improving the website’s buy-flow and navigation to enhance the overall customer experience.",
+        "Teams\n\n  Digital Customer Experience, Shaw Direct\n\n  Timeline\n\n  Octoberber  2022 – March 2023",
+        "Skills\n\n  • Web & Responsive Design\n\n  • UI/UX Design\n\n  • User Testing\n\n  • Prototyping\n\n  • Design System\n\n  • Product Thinking"
+      ],
+      "gallery": [
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-2048x999.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-2048x999.png 2048w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-300x146.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-1024x500.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-768x375.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-1536x750.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02.png 1692w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-300x195.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-1024x665.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-768x498.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-1536x997.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03.png 2188w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-300x211.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-1024x720.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-768x540.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-1536x1080.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-2048x1440.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05.png 2188w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-300x211.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-1024x720.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-768x540.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-1536x1080.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-2048x1440.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1.png 4500w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-300x103.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-1024x350.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-768x262.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-1536x525.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-2048x700.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2.png 2250w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-300x103.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-1024x350.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-768x262.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-1536x525.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-2048x700.png"
+      ],
+      "legacyUrl": "https://www.quynhdo.ca/shaw-direct/"
+    },
+    {
+      "slug": "huey-lam-digital-tailor-shop",
+      "title": "Huey Lam Digital Tailor Shop",
+      "tagline": "",
+      "thumb": "",
+      "cardImage": "https://www.quynhdo.ca/wp-content/uploads/2021/02/huey-home.png",
+      "summary": [],
+      "gallery": [],
+      "legacyUrl": "https://www.quynhdo.ca/huey-lam-digital-tailor-shop/"
+    },
+    {
+      "slug": "calgary-silkscreen",
+      "title": "Calgary Silkscreen",
+      "tagline": "OVERVIEW",
+      "thumb": "https://www.quynhdo.ca/wp-content/uploads/2021/04/note.png",
+      "cardImage": "https://www.quynhdo.ca/wp-content/uploads/2021/04/note.png",
+      "summary": [
+        "Company Background\n\n  Calgary Silkscreen Inc. has been the one-stop shop for many local businesses and organizations since 1983. They provide custom printing, promotional solution and embroidery services to a wide range of clients from individuals that are in demand, many scale apparel clothing lines, marketing firms, local businesses, government organizations etc.",
+        "Skills\n\n  • Graphic Design\n\n  • UI/UX Design\n\n  • Information Architecture\n\n  • Prototyping\n\n  • Design System\n\n  • Product Thinking"
+      ],
+      "gallery": [
+        "https://www.quynhdo.ca/wp-content/uploads/2021/04/note.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/04/note.png 2378w, https://www.quynhdo.ca/wp-content/uploads/2021/04/note-300x177.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/04/note-1024x603.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/04/note-768x452.png 768w, https://www.quynhdo.ca/wp-content/uploads/2021/04/note-1536x904.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2021/04/note-2048x1206.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/07/sitemap.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/07/sitemap.jpg 1186w, https://www.quynhdo.ca/wp-content/uploads/2021/07/sitemap-300x156.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/07/sitemap-1024x533.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/07/sitemap-768x400.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/04/silk-wireframe-1.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/04/silk-wireframe-2.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/04/silk-wireframe-3.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/04/silk-wireframe-4.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/07/Colors-2.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/07/Colors-2.png 2304w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Colors-2-274x300.png 274w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Colors-2-935x1024.png 935w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Colors-2-768x841.png 768w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Colors-2-1403x1536.png 1403w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Colors-2-1871x2048.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/07/Headings-1.png",
+        "https://www.quynhdo.ca/wp-content/uploads/2021/07/Headings-1.png 2304w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Headings-1-300x210.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Headings-1-1024x717.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Headings-1-768x538.png 768w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Headings-1-1536x1076.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2021/07/Headings-1-2048x1435.png"
+      ],
+      "legacyUrl": "https://www.quynhdo.ca/calgary-silkscreen/"
+    },
+    {
+      "slug": "rogers-bank",
+      "title": "Rogers Bank",
+      "tagline": "Seamless Credit Card Application Process for Newcomers",
+      "thumb": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1.jpg",
+      "cardImage": "https://www.quynhdo.ca/wp-content/uploads/2024/09/Rogers-Bank.jpg",
+      "summary": [
+        "Background\n\n  Rogers Bank, a subsidiary of Rogers Communications, offers credit card services with rewards, including cashback on Rogers services. Rogers partnered with Nova Credit to help newcomers establish credit by recognizing their international credit history.\n  \n\n  \n\nI was responsible for designing the credit card application for the newcomer program, integrating Nova Credit’s process into the main application flow\n\n  \n\nIf you'd like to learn more, please feel free to contact me on Linkedin or Email.",
+        "Role\n Product Designer\n\n  Timeline\n2023 – 2024",
+        "Skills\n\n  • Web & Responsive Design\n\n  • UI/UX Design\n\n  • Information Architecture\n\n  • User Research"
+      ],
+      "gallery": [
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1.jpg 2000w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-300x200.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-1024x682.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-768x512.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-1536x1024.jpg"
+      ],
+      "legacyUrl": "https://www.quynhdo.ca/rogers-bank/"
+    },
+    {
+      "slug": "rogers-together-with-shaw",
+      "title": "Rogers Together with Shaw",
+      "tagline": "Collective Work for Shaw and Rogers",
+      "thumb": "https://www.quynhdo.ca/wp-content/uploads/2024/10/self-protect.jpg",
+      "cardImage": "https://www.quynhdo.ca/wp-content/uploads/2024/09/Self-Protect.jpg",
+      "summary": [
+        "Role\n\n In addition to working on Shaw Direct, I contributed to various projects and campaigns aimed at enhancing the digital customer experience for Shaw's website and later Rogers. My work focused on improving the visual design of product landing pages and developing UI components to add to the design systems that ensured webpages were user-friendly and engaging, effectively drawing customer attention while educating them about new products.",
+        "Role\n UI/UX Designer\n\n  Timeline\n2023 – 2024",
+        "Skills\n\n  • Web & Responsive Design\n\n  • UI/UX Design\n\n  • Information Architecture"
+      ],
+      "gallery": [
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/self-protect.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/self-protect.jpg 1920w, https://www.quynhdo.ca/wp-content/uploads/2024/10/self-protect-300x169.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/self-protect-1024x576.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/self-protect-768x432.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/self-protect-1536x864.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-Support-scaled.jpg",
+        "https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-Support-scaled.jpg 2560w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-Support-300x214.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-Support-1024x731.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-Support-768x548.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-Support-1536x1096.jpg 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-Support-2048x1461.jpg"
+      ],
+      "legacyUrl": "https://www.quynhdo.ca/rogers-together-with-shaw/"
+    }
+  ]
+}
