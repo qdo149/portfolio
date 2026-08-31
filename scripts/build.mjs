@@ -2,212 +2,37 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.join(__dirname, "..");
+const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
-const site = JSON.parse(
-  fs.readFileSync(path.join(root, "src/data/site.json"), "utf8")
-);
-
+const site = JSON.parse(fs.readFileSync(path.join(root, "src/data/site.json"), "utf8"));
 const basePath = process.env.BASE_PATH || "";
+const meta = {
+  nab:{sector:"Banking · Merchant services",year:"2025–2026",role:"Senior Product Designer",accent:"lime",label:"Confidential work",result:"Merchant onboarding, payment experiences and internal banker tools across Australia and New Zealand.",skills:["Service design","Accessibility","AI enablement"]},
+  "rogers-bank":{sector:"Fintech · Newcomer credit",year:"2023–2024",role:"Product Designer",accent:"red",label:"Launched product",result:"Validated a clearer credit-card application journey through 10 targeted prototype interviews.",skills:["User research","Responsive UX","Prototyping"]},
+  "shaw-direct":{sector:"Telecom · E-commerce",year:"2022–2023",role:"Sole UI/UX Designer",accent:"blue",label:"Conversion optimization",result:"Redesigned plan-builder decisions around observed friction and a 6% conversion gap.",skills:["Product analytics","Experimentation","Design systems"]},
+  "genex-member-portal":{sector:"Member platform · B2B",year:"2023",role:"Lead UI/UX Designer",accent:"mint",label:"0→1 platform",result:"Created a scalable member hub that achieved more than 85% user satisfaction.",skills:["Information architecture","Product roadmap","Community UX"]},
+  "huey-lam-digital-tailor-shop":{sector:"E-commerce · Retail",year:"2020",role:"Product Designer",accent:"gold",label:"End-to-end transformation",result:"Moved a custom tailoring experience online while preserving the value of expert fitting.",skills:["Contextual research","E-commerce","Brand system"]}
+};
+const order=["nab","rogers-bank","shaw-direct","genex-member-portal","huey-lam-digital-tailor-shop"];
+const projects=[...site.projects].sort((a,b)=>(order.indexOf(a.slug)<0?99:order.indexOf(a.slug))-(order.indexOf(b.slug)<0?99:order.indexOf(b.slug)));
+const esc=(s="")=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const asset=(p)=>basePath?`${basePath.replace(/\/$/,"")}${p}`:p;
+const clean=(src="")=>src.split(/\s+\d+w,/)[0].trim();
+const write=(rel,html)=>{const out=path.join(dist,rel);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,html);};
 
-function esc(s) {
-  return String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+function shell({title,active,body,description=site.hero.intro}){
+ const links=[["home","/","Home"],["work","/work/","Work"],["about","/about/","About"]].map(([id,href,label])=>`<a class="nav-link${active===id?" is-active":""}" href="${asset(href)}">${label}</a>`).join("");
+ return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} · Quynh Do — Product Designer</title><meta name="description" content="${esc(description.slice(0,160))}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="${asset("/assets/css/main.css")}"><link rel="icon" href="${esc(site.assets.logo)}"></head><body><a class="skip-link" href="#content">Skip to content</a><header class="site-header"><a class="wordmark" href="${asset("/")}" aria-label="Quynh Do home">QD<span>.</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation">${links}<a class="nav-contact" href="${esc(site.social.email)}">Let's talk ↗</a></nav></header><main id="content">${body}</main><footer class="site-footer"><div><strong>Quynh Do</strong><p>Product designer crafting clear experiences for complex systems.</p></div><div class="footer-links"><a href="${esc(site.social.linkedin)}" target="_blank" rel="noopener">LinkedIn ↗</a><a href="${esc(site.social.email)}">Email ↗</a></div><p class="copyright">© ${new Date().getFullYear()}</p></footer><script src="${asset("/assets/js/main.js")}" defer></script></body></html>`;
 }
+function card(p,index,large=false){const m=meta[p.slug]||{sector:"Product design",year:"",result:p.tagline,accent:"gray",label:"Selected work"};const img=clean(p.cardImage||p.thumb);return `<article class="project-card accent-${m.accent}${large?" project-card--large":""}"><a href="${asset(`/work/${p.slug}/`)}" aria-label="View ${esc(p.title)} case study"><div class="card-top"><span>${esc(m.label)}</span><span>${String(index+1).padStart(2,"0")}</span></div><div class="project-media"${img?` style="background-image:url('${esc(img)}')"`:""}></div><div class="project-copy"><p class="meta">${esc(m.sector)} <span>·</span> ${esc(m.year)}</p><h3>${esc(p.title)}</h3><p>${esc(m.result)}</p><span class="case-link">Read case study <b>↗</b></span></div></a></article>`;}
 
-function asset(p) {
-  if (!basePath) return p;
-  return `${basePath.replace(/\/$/, "")}${p}`;
-}
-
-function nav(active) {
-  const items = [
-    { href: asset("/"), label: "Home", id: "home" },
-    { href: asset("/work/"), label: "UI/UX", id: "work" },
-    { href: asset("/about/"), label: "About", id: "about" },
-  ];
-  return items
-    .map(
-      (i) =>
-        `<a class="nav-link${active === i.id ? " is-active" : ""}" href="${i.href}">${esc(i.label)}</a>`
-    )
-    .join("\n        ");
-}
-
-function shell({ title, active, body, description = "" }) {
-  const desc = description || site.hero.intro.slice(0, 160);
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${esc(title)} · ${esc(site.brand)}</title>
-  <meta name="description" content="${esc(desc)}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="${asset("/assets/css/main.css")}" />
-  <link rel="icon" href="${esc(site.assets.logo)}" />
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="${asset("/")}">
-      <img src="${esc(site.assets.logo)}" alt="${esc(site.brand)}" width="120" height="40" />
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="site-nav" aria-label="Main">
-      ${nav(active)}
-      <a class="nav-link nav-cta" href="${esc(site.social.email)}">Contact</a>
-    </nav>
-  </header>
-  <main>
-${body}
-  </main>
-  <footer class="site-footer">
-    <p>© ${new Date().getFullYear()} ${esc(site.name)}</p>
-    <div class="footer-links">
-      <a href="${esc(site.social.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="${esc(site.social.instagram)}" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="${esc(site.social.email)}">Email</a>
-    </div>
-  </footer>
-  <script src="${asset("/assets/js/main.js")}" defer></script>
-</body>
-</html>`;
-}
-
-function projectCard(p) {
-  const img = p.cardImage || p.thumb;
-  return `
-    <article class="project-card">
-      <a href="${asset(`/work/${p.slug}/`)}" class="project-card-link">
-        <div class="project-card-media"${img ? ` style="background-image:url('${esc(img)}')"` : ""}>
-          <div class="project-card-overlay">
-            <h3>${esc(p.title)}</h3>
-            ${p.tagline ? `<p>${esc(p.tagline)}</p>` : ""}
-          </div>
-        </div>
-      </a>
-    </article>`;
-}
-
-function write(rel, html) {
-  const out = path.join(dist, rel);
-  fs.mkdirSync(path.dirname(out), { recursive: true });
-  fs.writeFileSync(out, html);
-}
-
-fs.rmSync(dist, { recursive: true, force: true });
-fs.mkdirSync(dist, { recursive: true });
-
-fs.cpSync(path.join(root, "src/assets"), path.join(dist, "assets"), { recursive: true });
-fs.cpSync(path.join(root, "src/data"), path.join(dist, "data"), { recursive: true });
-
-const homeBody = `
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">${esc(site.brand)}</p>
-          <h1>${esc(site.hero.greeting)}</h1>
-          <p class="lead">${esc(site.hero.intro)}</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="${asset("/work/")}">View UI/UX work</a>
-            <a class="btn btn-ghost" href="${asset("/about/")}">About me</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img src="${esc(site.assets.avatar)}" alt="Portrait of ${esc(site.name)}" width="420" height="420" loading="eager" />
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="section-head">
-        <h2>Selected work</h2>
-        <a class="text-link" href="${asset("/work/")}">See all →</a>
-      </div>
-      <div class="project-grid">
-        ${site.projects.slice(0, 6).map(projectCard).join("")}
-      </div>
-    </section>`;
-
-write("index.html", shell({ title: "Home", active: "home", body: homeBody }));
-
-const workBody = `
-    <section class="page-hero">
-      <h1>UI/UX Design</h1>
-      <p class="lead">Case studies and product design work across fintech, telecom, and member experiences.</p>
-    </section>
-    <section class="section">
-      <div class="project-grid project-grid--work">
-        ${site.projects.map(projectCard).join("")}
-      </div>
-    </section>`;
-
-write("work/index.html", shell({ title: "UI/UX Design", active: "work", body: workBody }));
-
-const aboutBody = `
-    <section class="about-page">
-      <div class="about-grid">
-        <div class="about-visual">
-          <img src="${esc(site.assets.avatar)}" alt="${esc(site.name)}" width="480" height="480" loading="lazy" />
-        </div>
-        <div class="about-copy">
-          <h1>${esc(site.about.heading)}</h1>
-          <p class="lead">${esc(site.about.bio)}</p>
-          <h2>Let's talk!</h2>
-          <p>Your email can find me drinking bubble tea at <a href="mailto:${esc(site.about.email)}">${esc(site.about.email)}</a></p>
-          <div class="about-links">
-            <a href="${esc(site.social.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="${esc(site.social.instagram)}" target="_blank" rel="noopener noreferrer">Instagram</a>
-          </div>
-        </div>
-      </div>
-    </section>`;
-
-write("about/index.html", shell({ title: "About", active: "about", body: aboutBody }));
-
-for (const p of site.projects) {
-  const summary = (p.summary || [])
-    .map((para) => `<p>${esc(para)}</p>`)
-    .join("\n          ");
-  const gallery = (p.gallery || [])
-    .slice(0, 9)
-    .map(
-      (src) =>
-        `<figure class="gallery-item"><img src="${esc(src)}" alt="" loading="lazy" /></figure>`
-    )
-    .join("\n          ");
-
-  const body = `
-    <article class="case-study">
-      <header class="case-header">
-        <a class="back-link" href="${asset("/work/")}">← All work</a>
-        <p class="eyebrow">Case study</p>
-        <h1>${esc(p.title)}</h1>
-        ${p.tagline ? `<p class="case-tagline">${esc(p.tagline)}</p>` : ""}
-      </header>
-      ${p.cardImage || p.thumb ? `<div class="case-hero"><img src="${esc(p.cardImage || p.thumb)}" alt="" /></div>` : ""}
-      <div class="case-content prose">
-        <h2>Overview</h2>
-        ${summary || "<p>Content migrated from the live portfolio. More detail coming soon.</p>"}
-        <p class="legacy-note">Originally published at <a href="${esc(p.legacyUrl)}" target="_blank" rel="noopener noreferrer">quynhdo.ca</a>.</p>
-      </div>
-      ${gallery ? `<section class="case-gallery"><div class="gallery-grid">${gallery}</div></section>` : ""}
-    </article>`;
-
-  write(
-    `work/${p.slug}/index.html`,
-    shell({
-      title: p.title,
-      active: "work",
-      body,
-      description: p.tagline || p.summary?.[0]?.slice(0, 160) || "",
-    })
-  );
-}
-
-console.log(`Built ${site.projects.length + 3} pages → dist/`);
+fs.rmSync(dist,{recursive:true,force:true});fs.mkdirSync(dist,{recursive:true});fs.cpSync(path.join(root,"src/assets"),path.join(dist,"assets"),{recursive:true});
+const featured=projects.filter(p=>order.includes(p.slug));
+const home=`<section class="hero"><div class="hero-kicker"><span>Senior Product Designer</span><span>Banking · Fintech · Digital services</span></div><h1>${esc(site.hero.greeting)}</h1><div class="hero-bottom"><p>${esc(site.hero.intro)}</p><a class="round-link" href="${asset("/work/")}"><span>Explore<br>my work</span><b>↓</b></a></div><div class="hero-marquee" aria-hidden="true"><span>Strategy</span><i>✦</i><span>Research</span><i>✦</i><span>Systems</span><i>✦</i><span>Craft</span></div></section><section class="work-section"><header class="section-title"><p>Selected work</p><h2>Designing for decisions,<br>not decoration.</h2></header><div class="project-grid">${featured.slice(0,4).map((p,i)=>card(p,i,i===0)).join("")}</div><a class="wide-link" href="${asset("/work/")}">View all projects <span>↗</span></a></section><section class="statement"><p>My approach</p><h2>Make the complicated feel obvious.</h2><div><p>I connect customer evidence, business goals and delivery constraints to shape products people can understand and teams can build.</p><a href="${asset("/about/")}">More about me ↗</a></div></section>`;
+write("index.html",shell({title:"Senior Product Designer",active:"home",body:home}));
+const work=`<section class="page-intro"><p class="eyebrow">Selected work · 2020–2026</p><h1>Product stories with<br><em>evidence</em> behind them.</h1><p>Banking, fintech, telecom and member experiences—designed from discovery through delivery.</p></section><section class="work-section work-index"><div class="project-grid">${featured.map((p,i)=>card(p,i,i===0)).join("")}</div><div class="archive"><p>Additional work</p>${projects.filter(p=>!order.includes(p.slug)).map(p=>`<a href="${asset(`/work/${p.slug}/`)}"><span>${esc(p.title)}</span><span>Digital experience ↗</span></a>`).join("")}</div></section>`;
+write("work/index.html",shell({title:"Selected Work",active:"work",body:work}));
+const about=`<section class="about-hero"><div class="about-image"><img src="${esc(site.assets.avatar)}" alt="Quynh Do" width="560" height="680"></div><div class="about-copy"><p class="eyebrow">About me</p><h1>${esc(site.about.heading)}</h1><p class="about-lead">${esc(site.about.bio)}</p><div class="about-facts"><div><span>Based between</span><strong>Canada + Vietnam</strong></div><div><span>Experience across</span><strong>Banking + Digital products</strong></div><div><span>Also fluent in</span><strong>Visual design + Code</strong></div></div><a class="wide-link" href="mailto:${esc(site.about.email)}">${esc(site.about.email)} <span>↗</span></a></div></section>`;
+write("about/index.html",shell({title:"About",active:"about",body:about}));
+for(const p of projects){const m=meta[p.slug]||{sector:"Product design",year:"",role:"Product Designer",result:p.tagline,skills:[]};const paras=(p.summary||[]).map(x=>x.replace(/\s+/g," ").trim()).filter(Boolean);const gallery=(p.gallery||[]).map(clean).filter((x,i,a)=>x&&a.indexOf(x)===i).slice(0,8);const next=projects[(projects.indexOf(p)+1)%projects.length];const body=`<article class="case-study"><header class="case-header"><a class="back-link" href="${asset("/work/")}">← Selected work</a><p class="eyebrow">${esc(m.sector)}</p><h1>${esc(p.title)}</h1><p class="case-tagline">${esc(p.tagline||m.result)}</p><div class="case-facts"><div><span>Role</span><strong>${esc(m.role)}</strong></div><div><span>Timeline</span><strong>${esc(m.year)}</strong></div><div><span>Focus</span><strong>${esc((m.skills||[]).join(" · ")||"Product design")}</strong></div></div></header>${p.cardImage||p.thumb?`<figure class="case-hero"><img src="${esc(clean(p.cardImage||p.thumb))}" alt="${esc(p.title)} project overview"></figure>`:""}<section class="case-summary"><p class="eyebrow">The outcome</p><h2>${esc(m.result)}</h2><div class="prose">${paras.map((x,i)=>`<p${i===0?' class="lead-paragraph"':""}>${esc(x)}</p>`).join("")||"<p>This project is being prepared for a fuller write-up.</p>"}</div></section>${gallery.length?`<section class="case-gallery"><p class="eyebrow">Selected artifacts</p><div class="gallery-grid">${gallery.map((src,i)=>`<figure class="gallery-item${i===0?" gallery-item--wide":""}"><img src="${esc(src)}" alt="${esc(p.title)} design artifact ${i+1}" loading="lazy"></figure>`).join("")}</div></section>`:""}<nav class="next-project"><span>Next project</span><a href="${asset(`/work/${next.slug}/`)}">${esc(next.title)} ↗</a></nav></article>`;write(`work/${p.slug}/index.html`,shell({title:p.title,active:"work",body,description:m.result}));}
+console.log(`Built ${projects.length+3} pages → dist/`);

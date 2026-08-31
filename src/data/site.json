@@ -1,13 +1,13 @@
 {
   "name": "Quynh Do",
-  "brand": "qxyxhdodesign",
+  "brand": "Quynh Do",
   "hero": {
-    "greeting": "Xin chào, I'm Quynh (kwin)",
-    "intro": "I'm a UI/UX designer with background in graphic design, dedicated to creating visually appealing and user-centric digital experiences. Assisting brands and products tell their stories through design."
+    "greeting": "I turn complex systems into clear, human experiences.",
+    "intro": "Senior Product Designer working across banking, fintech and digital services. I bring product thinking, visual craft and technical fluency to high-impact customer journeys."
   },
   "about": {
-    "heading": "Xin chào! I'm Quỳnh",
-    "bio": "I'm a product designer with a background in graphic design. I've always been drawn to the intersection of creativity and functionality, which is why I transitioned to product design. I love finding innovative solutions that blend visual appeal with problem-solving to create exceptional user experiences. Throughout my career, I've helped companies transform basic ideas into impactful products and features. My work has focused on enhancing the lives of end-users and driving business growth.",
+    "heading": "Xin chào! I'm Quỳnh.",
+    "bio": "I'm a product designer with a foundation in visual communication and experience across banking, telecom and member platforms. I translate complex requirements into useful, accessible experiences by bringing research, product strategy and visual craft together. I also have software engineering training, which helps me collaborate closely with developers and design with delivery in mind.",
     "email": "hello@quynhdo.ca"
   },
   "social": {
