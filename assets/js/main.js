@@ -33,8 +33,6 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
 
   const updateControls = () => {
     const active = currentIndex();
-    previous.disabled = active === 0;
-    next.disabled = active === cards.length - 1;
     dots.forEach((dot, index) => {
       dot.classList.toggle("is-active", index === active);
       if (index === active) dot.setAttribute("aria-current", "true");
@@ -43,10 +41,10 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   };
 
   previous.addEventListener("click", () => {
-    goTo(currentIndex() - 1);
+    goTo((currentIndex() - 1 + cards.length) % cards.length);
   });
   next.addEventListener("click", () => {
-    goTo(currentIndex() + 1);
+    goTo((currentIndex() + 1) % cards.length);
   });
   dots.forEach((dot, index) => dot.addEventListener("click", () => goTo(index)));
   track.addEventListener("scroll", updateControls, { passive: true });
