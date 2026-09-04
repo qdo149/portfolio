@@ -71,7 +71,7 @@ write("index.html",ui.shell({title:"Product & Visual Designer",active:"home",bod
 })}));
 write("work/index.html",ui.shell({title:"UI/UX Design",active:"work",body:
   ui.indexIntro("UI/UX Design","Selected work","Digital experiences across banking, fintech, telecom and member services.")+
-  `<section class="work-section work-index container"><div class="project-grid">${featured.map((p,i)=>ui.card(p,{featured:i===0})).join("")}</div></section>`+ui.contact()
+  `<section class="work-section work-index container"><div class="project-grid">${featured.map(p=>ui.card(p)).join("")}</div></section>`+ui.contact()
 }));
 write("about/index.html",ui.shell({title:"About",active:"about",body:
   ui.indexIntro("About","Creativity meets functionality.","A product designer with graphic design roots.")+
