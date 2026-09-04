@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { createComponents } from "./figma-components.mjs";
+import { projects as figmaProjects } from "../src/data/figma-projects.mjs";
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
@@ -17,32 +19,19 @@ const meta = {
 const order=["nab","rogers-bank","shaw-direct","genex-member-portal","huey-lam-digital-tailor-shop","rogers-together-with-shaw"];
 const projects=[...site.projects].sort((a,b)=>(order.indexOf(a.slug)<0?99:order.indexOf(a.slug))-(order.indexOf(b.slug)<0?99:order.indexOf(b.slug)));
 const esc=(s="")=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-const asset=(p)=>basePath?`${basePath.replace(/\/$/,"")}${p}`:p;
+const asset=(p)=>{const base=p.startsWith("/assets/")?(process.env.ASSET_BASE_PATH||basePath):basePath;return base?`${base.replace(/\/$/,"")}${p}`:p;};
 const clean=(src="")=>src.split(/\s+\d+w,/)[0].trim();
-const write=(rel,html)=>{const out=path.join(dist,rel);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,html);};
-
-function shell({title,active,body,description=site.hero.intro}){
-  const links=[["home","/","Home"],["work","/work/","UI/UX Design"],["graphics","/graphics/","Graphic Design"],["about","/about/","About"]]
-    .map(([id,href,label])=>`<a class="nav-link${active===id?" is-active":""}" href="${href.startsWith("http")?href:asset(href)}">${label}</a>`).join("");
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} · Quynh Do — Product Designer</title><meta name="description" content="${esc(description.slice(0,160))}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="${asset("/assets/css/main.css")}"><link rel="icon" href="${esc(site.assets.logo)}"></head><body><a class="skip-link" href="#content">Skip to content</a><header class="site-header"><a class="wordmark" href="${asset("/")}" aria-label="Quynh Do home"><img src="${esc(site.assets.logo)}" alt="qxyxhdodesign" width="100" height="65"></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation">${links}</nav></header><main id="content">${body}</main><footer class="site-footer"><p>Let’s create something thoughtful together.</p><div class="footer-links"><a href="${asset("/")}">Home</a><a href="${asset("/work/")}">UI/UX</a><a href="${asset("/graphics/")}">Graphics</a><a href="${asset("/about/")}">About</a><a href="${esc(site.social.linkedin)}" target="_blank" rel="noopener">LinkedIn</a><a href="${esc(site.social.email)}">Email</a></div><p class="copyright">© ${new Date().getFullYear()} Quynh Do</p></footer><script src="${asset("/assets/js/main.js")}" defer></script></body></html>`;
-}
-
-function card(p,index){
-  const m=meta[p.slug]||{sector:"Product design",year:"",result:p.tagline};
-  const img=clean(p.cardImage||p.thumb);
-  return `<article class="project-card"><a href="${asset(`/work/${p.slug}/`)}" aria-label="View ${esc(p.title)} case study"><div class="project-media"${img?` style="background-image:url('${esc(img)}')"`:""}><span>${String(index+1).padStart(2,"0")}</span></div><div class="project-copy"><p class="meta">${esc(m.sector)}${m.year?` · ${esc(m.year)}`:""}</p><h3>${esc(p.title)}</h3><p>${esc(m.result)}</p><span class="case-link">View case study →</span></div></a></article>`;
-}
-
-fs.rmSync(dist,{recursive:true,force:true});
-fs.mkdirSync(dist,{recursive:true});
-fs.cpSync(path.join(root,"src/assets"),path.join(dist,"assets"),{recursive:true});
-const featured=projects.filter(p=>order.includes(p.slug));
-
-const home=`<section class="hero"><img class="hero-avatar" src="${esc(site.assets.avatar)}" alt="Quynh Do" width="220" height="220"><h1>${esc(site.hero.greeting)}</h1><p>${esc(site.hero.intro)}</p><div class="hero-actions"><a class="button button--solid" href="${asset("/work/")}">UI/UX Projects</a><a class="button" href="${asset("/graphics/")}">Graphic Work</a></div><div class="hero-social"><a href="${esc(site.social.instagram)}">Instagram</a><a href="${esc(site.social.linkedin)}">LinkedIn</a><a href="${esc(site.social.email)}">Email</a></div></section><section class="work-section"><header class="section-title"><p>Selected work</p><h2>Product and UX design</h2><p>A collection of digital experiences shaped by research, collaboration and visual craft.</p></header><div class="project-grid">${featured.slice(0,5).map((p,i)=>card(p,i)).join("")}</div></section>`;
-write("index.html",shell({title:"Product Designer",active:"home",body:home}));
-
-const work=`<section class="page-intro"><p class="eyebrow">UI/UX Design</p><h1>Selected work</h1><p>Digital experiences across banking, fintech, telecom and member services.</p></section><section class="work-section work-index"><div class="project-grid">${featured.map((p,i)=>card(p,i)).join("")}</div></section>`;
-write("work/index.html",shell({title:"UI/UX Design",active:"work",body:work}));
+const write=(rel,html)=>{
+  if(process.env.RELATIVE_URLS === "1") {
+    html=html.replace(/(href|src)="\/(?!\/)([^"]*)"/g,(_,attribute,url)=>{
+      const [pathname,hash] = url.split("#");
+      let target=path.posix.relative(path.posix.dirname(rel),pathname||".")||".";
+      if(!path.posix.extname(pathname)) target=target.replace(/\/$/,"")+"/";
+      return `${attribute}="${target}${hash?'#'+hash:''}"`;
+    });
+  }
+  const out=path.join(dist,rel);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,html);
+};
 
 const graphicProjects=[
   {slug:"genex-marketing",title:"GENEX",type:"Marketing graphic design",image:"https://www.quynhdo.ca/wp-content/uploads/2024/10/Front-GENEX.jpg",summary:"Marketing campaigns and visual systems for a global cooperative providing genetic and reproductive solutions to dairy and beef producers.",gallery:["https://www.quynhdo.ca/wp-content/uploads/2023/03/URUS-4.png","https://www.quynhdo.ca/wp-content/uploads/2023/03/URUS-3-768x576.png"]},
@@ -56,26 +45,53 @@ const graphicProjects=[
   {slug:"emergency-love",title:"Emergency Love",type:"Digital drawing",image:"https://www.quynhdo.ca/wp-content/uploads/2021/04/scene-2.jpg",summary:"A digital illustration focused on character, emotion and cinematic composition.",gallery:[]},
   {slug:"transparency",title:"Transparency",type:"Illustration work",image:"https://www.quynhdo.ca/wp-content/uploads/2020/11/do_quynh_transparency.jpg",summary:"An experimental illustration using layered shapes and transparency to create depth.",gallery:[]}
 ];
-const graphicCard=(p,i)=>{const media=`<div class="graphic-media" style="background-image:url('${esc(p.image)}')"><span>${String(i+1).padStart(2,"0")}</span></div>`;const copy=`<div class="graphic-copy"><p>${esc(p.type)}</p><h2>${esc(p.title)}</h2><span>View project →</span></div>`;return `<article class="graphic-card"><a href="${asset(`/graphics/${p.slug}/`)}">${media}${copy}</a></article>`;};
-const graphics=`<section class="page-intro graphics-intro"><p class="eyebrow">Graphic Design</p><h1>Visual stories for brands and businesses.</h1><p>Projects I have done as a graphic designer for different companies and local businesses.</p></section><section class="graphics-section"><div class="graphics-carousel-shell" data-carousel><div class="graphics-carousel-stage"><button class="carousel-button carousel-button--previous" type="button" data-carousel-prev aria-label="Previous graphic design project">←</button><div class="graphics-carousel" data-carousel-track tabindex="0" aria-label="Graphic design projects">${graphicProjects.map(graphicCard).join("")}</div><button class="carousel-button carousel-button--next" type="button" data-carousel-next aria-label="Next graphic design project">→</button></div><div class="carousel-pagination" aria-label="Choose a graphic design project">${graphicProjects.map((p,i)=>`<button class="carousel-dot${i===0?" is-active":""}" type="button" data-carousel-dot="${i}" aria-label="View ${esc(p.title)}"${i===0?' aria-current="true"':""}></button>`).join("")}</div></div><div class="graphics-cta"><p class="eyebrow">Let's talk</p><h2>Bringing a new brand or idea to life?</h2><p>From visual identity and marketing materials to photography and digital design, I can help make it feel cohesive.</p><a class="button button--solid" href="${esc(site.social.email)}">hello@quynhdo.ca</a></div></section>`;
-write("graphics/index.html",shell({title:"Graphic Design",active:"graphics",body:graphics,description:"Graphic design, branding, visual design, photography and illustration work by Quynh Do."}));
 
-for(const p of graphicProjects){
-  const next=graphicProjects[(graphicProjects.indexOf(p)+1)%graphicProjects.length];
-  const gallery=[p.image,...p.gallery].filter((x,i,a)=>x&&a.indexOf(x)===i);
-  const body=`<article class="case-study graphic-case"><header class="case-header"><a class="back-link" href="${asset("/graphics/")}">← Graphic Design</a><p class="eyebrow">${esc(p.type)}</p><h1>${esc(p.title)}</h1><p class="case-tagline">${esc(p.summary)}</p></header><figure class="case-hero"><img src="${esc(p.image)}" alt="${esc(p.title)} project overview"></figure><section class="case-summary"><p class="eyebrow">Project overview</p><h2>${esc(p.summary)}</h2><div class="prose"><p class="lead-paragraph">This selected work reflects my background in graphic design and my approach to building visual systems that feel clear, distinctive and appropriate for their audience.</p></div></section><section class="case-gallery"><p class="eyebrow">Selected work</p><div class="gallery-grid">${gallery.map((src,i)=>`<figure class="gallery-item${i===0?" gallery-item--wide":""}"><img src="${esc(src)}" alt="${esc(p.title)} artwork ${i+1}" loading="lazy"></figure>`).join("")}</div></section><nav class="next-project"><span>Next graphic project</span><a href="${asset(`/graphics/${next.slug}/`)}">${esc(next.title)} →</a></nav></article>`;
-  write(`graphics/${p.slug}/index.html`,shell({title:p.title,active:"graphics",body,description:p.summary}));
+const ui = createComponents({ asset, esc, site });
+const productItems = projects.map(p => {
+  const m = meta[p.slug] || {sector:"Product design",year:"",role:"Product Designer",result:p.tagline,skills:[]};
+  return {...p, href:`/work/${p.slug}/`, category:m.sector, year:m.year, role:m.role,
+    image:clean(p.cardImage||p.thumb), description:m.result, overview:m.result, tags:m.skills,
+    gallery:(p.gallery||[]).map(clean).filter((x,i,a)=>x&&a.indexOf(x)===i).slice(0,8).map(src=>({src})),
+    summary:(p.summary||[]).map(t=>t.replace(/\s+/g," ").trim()).filter(Boolean)};
+});
+const graphicItems = graphicProjects.map(p => {
+  const imported = figmaProjects.find(f=>f.slug === (p.slug === "genex-marketing" ? "genex" : p.slug));
+  if(imported) return {...imported, slug:p.slug, href:`/graphics/${p.slug}/`};
+  return {...p, href:`/graphics/${p.slug}/`, category:p.type, role:"Graphic Designer",
+    description:p.summary, overview:p.summary, tags:p.type.split(" · "),
+    gallery:[p.image,...p.gallery].filter((s,i,a)=>s&&a.indexOf(s)===i).map(src=>({src}))};
+});
+const featured = productItems.filter(p=>order.includes(p.slug));
+fs.rmSync(dist,{recursive:true,force:true});
+fs.mkdirSync(dist,{recursive:true});
+fs.cpSync(path.join(root,"src/assets"),path.join(dist,"assets"),{recursive:true});
+
+write("index.html",ui.shell({title:"Product & Visual Designer",active:"home",body:ui.home({
+  productCards:featured.slice(0,3).map((p,i)=>ui.card(p,{featured:i===0})).join(""),
+  graphicCards:["rau-bistro","genex-marketing","urus"].map((slug,i)=>ui.card(graphicItems.find(p=>p.slug===slug),{featured:i===0})).join("")
+})}));
+write("work/index.html",ui.shell({title:"UI/UX Design",active:"work",body:
+  ui.indexIntro("UI/UX Design","Selected work","Digital experiences across banking, fintech, telecom and member services.")+
+  `<section class="work-section work-index container"><div class="project-grid">${featured.map((p,i)=>ui.card(p,{featured:i===0})).join("")}</div></section>`+ui.contact()
+}));
+write("about/index.html",ui.shell({title:"About",active:"about",body:
+  ui.indexIntro("About","Creativity meets functionality.","A product designer with graphic design roots.")+
+  `<section class="about-section container">${ui.aboutContent()}</section>`+ui.contact()
+}));
+const carousel=`<section class="graphics-section container"><div class="graphics-carousel-shell" data-carousel><div class="graphics-carousel-stage"><button class="carousel-button carousel-button--previous" type="button" data-carousel-prev aria-label="Previous graphic design project">←</button><div class="graphics-carousel" data-carousel-track tabindex="0" aria-label="Graphic design projects">${graphicItems.map(p=>ui.card(p,{graphic:true})).join("")}</div><button class="carousel-button carousel-button--next" type="button" data-carousel-next aria-label="Next graphic design project">→</button></div><div class="carousel-pagination" aria-label="Choose a graphic design project">${graphicItems.map((p,i)=>`<button class="carousel-dot${i===0?" is-active":""}" type="button" data-carousel-dot="${i}" aria-label="View ${esc(p.title)}"${i===0?' aria-current="true"':""}></button>`).join("")}</div></div></section>`;
+write("graphics/index.html",ui.shell({title:"Graphic Design",active:"graphics",body:
+  ui.indexIntro("Graphic Design","Visual stories.","Branding, campaigns, photography and illustration for companies and local businesses.")+carousel+ui.contact()
+}));
+
+for(const [items,active,backHref,backLabel] of [[productItems,"work","/work/","UI/UX Design"],[graphicItems,"graphics","/graphics/","Graphic Design"]]){
+  items.forEach((p,i)=>{
+    const body=ui.caseStudy(p,{prev:items[(i-1+items.length)%items.length],next:items[(i+1)%items.length],backHref,backLabel});
+    const html=ui.shell({title:p.title,active,body,description:p.overview});
+    write(p.href.slice(1)+"index.html",html);
+    // Preserve the Figma Make URLs alongside the existing graphic project URLs.
+    if(active==="graphics" && ["genex-marketing","rau-bistro","urus"].includes(p.slug)){
+      write(`work/${p.slug==="genex-marketing"?"genex":p.slug}/index.html`,html);
+    }
+  });
 }
-
-const about=`<section class="about-hero"><div class="about-image"><img src="${esc(site.assets.avatar)}" alt="Quynh Do" width="560" height="680"></div><div class="about-copy"><p class="eyebrow">About me</p><h1>${esc(site.about.heading)}</h1><p class="about-lead">${esc(site.about.bio)}</p><p>I’m currently pursuing a software engineering program to deepen my technical understanding and bring an even stronger perspective to the way I design and collaborate.</p><a class="text-link" href="mailto:${esc(site.about.email)}">${esc(site.about.email)} →</a></div></section>`;
-write("about/index.html",shell({title:"About",active:"about",body:about}));
-
-for(const p of projects){
-  const m=meta[p.slug]||{sector:"Product design",year:"",role:"Product Designer",result:p.tagline,skills:[]};
-  const paras=(p.summary||[]).map(x=>x.replace(/\s+/g," ").trim()).filter(Boolean);
-  const gallery=(p.gallery||[]).map(clean).filter((x,i,a)=>x&&a.indexOf(x)===i).slice(0,8);
-  const next=projects[(projects.indexOf(p)+1)%projects.length];
-  const body=`<article class="case-study"><header class="case-header"><a class="back-link" href="${asset("/work/")}">← UI/UX Design</a><p class="eyebrow">${esc(m.sector)}</p><h1>${esc(p.title)}</h1><p class="case-tagline">${esc(p.tagline||m.result)}</p><div class="case-facts"><div><span>Role</span><strong>${esc(m.role)}</strong></div><div><span>Timeline</span><strong>${esc(m.year)}</strong></div><div><span>Skills</span><strong>${esc((m.skills||[]).join(" · ")||"Product design")}</strong></div></div></header>${p.cardImage||p.thumb?`<figure class="case-hero"><img src="${esc(clean(p.cardImage||p.thumb))}" alt="${esc(p.title)} project overview"></figure>`:""}<section class="case-summary"><p class="eyebrow">Overview</p><h2>${esc(m.result)}</h2><div class="prose">${paras.map((x,i)=>`<p${i===0?' class="lead-paragraph"':""}>${esc(x)}</p>`).join("")||"<p>This project is being prepared for a fuller write-up.</p>"}</div></section>${gallery.length?`<section class="case-gallery"><p class="eyebrow">Selected work</p><div class="gallery-grid">${gallery.map((src,i)=>`<figure class="gallery-item${i===0?" gallery-item--wide":""}"><img src="${esc(src)}" alt="${esc(p.title)} design artifact ${i+1}" loading="lazy"></figure>`).join("")}</div></section>`:""}<nav class="next-project"><span>Next project</span><a href="${asset(`/work/${next.slug}/`)}">${esc(next.title)} →</a></nav></article>`;
-  write(`work/${p.slug}/index.html`,shell({title:p.title,active:"work",body,description:m.result}));
-}
-console.log(`Built ${projects.length+graphicProjects.length+4} pages → dist/`);
+console.log(`Built ${productItems.length+graphicItems.length+7} pages → dist/`);

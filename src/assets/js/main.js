@@ -1,10 +1,22 @@
 const toggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector("#site-nav");
-
+const closeMenu = () => {
+  nav?.classList.remove("is-open");
+  toggle?.setAttribute("aria-expanded", "false");
+};
 if (toggle && nav) {
   toggle.addEventListener("click", () => {
     const open = nav.classList.toggle("is-open");
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+  nav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && nav.classList.contains("is-open")) {
+      closeMenu();
+      toggle.focus();
+    }
   });
 }
 
@@ -14,40 +26,58 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const next = carousel.querySelector("[data-carousel-next]");
   const cards = [...carousel.querySelectorAll(".graphic-card")];
   const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
-
   if (!track || !previous || !next || !cards.length) return;
 
-  const currentIndex = () => {
-    if (track.scrollLeft <= 4) return 0;
-    if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) return cards.length - 1;
-    return cards.reduce((closest, card, index) => {
-      const distance = Math.abs(card.offsetLeft - track.offsetLeft - track.scrollLeft);
-      return distance < closest.distance ? { index, distance } : closest;
-    }, { index: 0, distance: Infinity }).index;
-  };
-
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let active = 0;
+  let destination = null;
+  let settleTimer;
+  const position = (card) => card.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+  const nearestIndex = () => cards.reduce((best, card, index) => {
+    const distance = Math.abs(position(card) - track.scrollLeft);
+    return distance < best.distance ? { index, distance } : best;
+  }, { index: 0, distance: Infinity }).index;
+  const syncDots = () => dots.forEach((dot, index) => {
+    dot.classList.toggle("is-active", index === active);
+    if (index === active) dot.setAttribute("aria-current", "true");
+    else dot.removeAttribute("aria-current");
+  });
   const goTo = (index) => {
-    const target = Math.max(0, Math.min(index, cards.length - 1));
-    track.scrollTo({ left: cards[target].offsetLeft - track.offsetLeft, behavior: "smooth" });
+    active = (index + cards.length) % cards.length;
+    destination = active;
+    syncDots();
+    track.scrollTo({ left: position(cards[active]), behavior: reduceMotion.matches ? "instant" : "smooth" });
   };
-
-  const updateControls = () => {
-    const active = currentIndex();
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("is-active", index === active);
-      if (index === active) dot.setAttribute("aria-current", "true");
-      else dot.removeAttribute("aria-current");
-    });
+  const layout = () => {
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    // Let every card reach the start, so the final two projects have distinct positions.
+    track.style.setProperty("--carousel-tail", Math.max(0, track.clientWidth - cards[0].getBoundingClientRect().width - gap) + "px");
+    track.scrollTo({ left: position(cards[active]), behavior: "instant" });
   };
-
-  previous.addEventListener("click", () => {
-    goTo((currentIndex() - 1 + cards.length) % cards.length);
-  });
-  next.addEventListener("click", () => {
-    goTo((currentIndex() + 1) % cards.length);
-  });
+  previous.addEventListener("click", () => goTo(active - 1));
+  next.addEventListener("click", () => goTo(active + 1));
   dots.forEach((dot, index) => dot.addEventListener("click", () => goTo(index)));
-  track.addEventListener("scroll", updateControls, { passive: true });
-  window.addEventListener("resize", updateControls);
-  updateControls();
+  track.addEventListener("keydown", (event) => {
+    const keys = { ArrowLeft: active - 1, ArrowRight: active + 1, Home: 0, End: cards.length - 1 };
+    if (event.target === track && Object.hasOwn(keys, event.key)) {
+      event.preventDefault();
+      goTo(keys[event.key]);
+    }
+  });
+  track.addEventListener("scroll", () => {
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(() => {
+      active = nearestIndex();
+      destination = null;
+      syncDots();
+    }, 150);
+    if (destination === null) {
+      active = nearestIndex();
+      syncDots();
+    }
+  }, { passive: true });
+  if ("ResizeObserver" in window) new ResizeObserver(layout).observe(track);
+  else window.addEventListener("resize", layout);
+  layout();
+  syncDots();
 });

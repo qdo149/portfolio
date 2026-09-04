@@ -1,0 +1,46 @@
+// Shared static components adapted from the user-supplied Figma Make export.
+// Keep native links and existing routes rather than adding a second app runtime.
+export function createComponents({ asset, esc, site }) {
+  const tags = (items = []) => `<ul class="tag-list" aria-label="Project skills">${items.map(tag => `<li>${esc(tag)}</li>`).join("")}</ul>`;
+  const socials = () => `<a href="${esc(site.social.linkedin)}" target="_blank" rel="noopener">LinkedIn</a><a href="${esc(site.social.instagram)}" target="_blank" rel="noopener">Instagram</a><a href="${esc(site.social.email)}">Email</a>`;
+
+  function shell({ title, active, body, description = site.hero.intro }) {
+    const links = [["work", "/work/", "UI/UX Design"], ["graphics", "/graphics/", "Graphic Design"], ["about", "/about/", "About"]];
+    return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} · Quynh Do</title><meta name="description" content="${esc(description.slice(0,160))}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="${asset('/assets/css/main.css')}"><link rel="icon" href="${esc(site.assets.logo)}"></head><body><a class="skip-link" href="#content">Skip to content</a><header class="site-header"><div class="header-inner"><a class="wordmark" href="${asset('/')}">Quynh Do</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Main navigation">${links.map(([id,href,label])=>`<a class="nav-link${active===id?' is-active':''}" ${active===id?'aria-current="page"':''} href="${asset(href)}">${label}</a>`).join('')}<a class="nav-link" href="${asset('/#contact')}">Contact</a></nav><a class="availability" href="${esc(site.social.linkedin)}" target="_blank" rel="noopener"><span aria-hidden="true"></span>Available for work</a></div></header><main id="content">${body}</main><footer class="site-footer container"><p>© ${new Date().getFullYear()} Quynh Do</p><div class="footer-links">${socials()}</div></footer><script src="${asset('/assets/js/main.js')}" defer></script></body></html>`;
+  }
+
+  function card(p, { graphic = false, featured = false } = {}) {
+    return `<article class="project-card${graphic?' graphic-card':''}${featured?' project-card--featured':''}"${p.bg?` style="--project-bg:${esc(p.bg)}"`:''}><a href="${asset(p.href)}"><div class="project-media"><img src="${esc(p.image)}" alt="${esc(p.title)} project" loading="lazy" width="960" height="640"></div><div class="project-copy"><p class="meta">${esc(p.category)}${p.year?' · '+esc(p.year):''}</p><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>${tags(p.tags)}<span class="case-link">View project</span></div></a></article>`;
+  }
+
+  function contact() {
+    return `<section id="contact" class="contact-section container"><div class="contact-card"><div><p class="eyebrow">Let's connect</p><h2>Grab a virtual<br>bubble tea?</h2><p>Whether it’s a product that needs design thinking, a brand identity, or just a conversation — I’d love to connect.</p></div><a class="button button--solid" href="${esc(site.social.email)}">Say hello</a></div></section>`;
+  }
+
+  function aboutContent() {
+    return `<div class="about-grid"><div><h2>At the intersection of creativity and functionality.</h2><div class="prose"><p>${esc(site.about.bio)}</p><p>My graphic design background gives my product work a level of visual precision that’s hard to retrofit — I care as much about how something looks as how it works.</p><p>I’m currently studying software engineering to strengthen my technical foundation and expand my impact as a product designer.</p></div><div class="social-pills">${socials()}</div></div><figure class="about-portrait"><img src="${esc(site.assets.avatar)}" alt="Quynh Do" width="600" height="800" loading="lazy"><figcaption><span>Currently</span>Open to opportunities</figcaption></figure></div>`;
+  }
+
+  function home({ productCards, graphicCards }) {
+    return `<section class="hero container"><p class="eyebrow">Xin chào —</p><h1>Quỳnh<br><em>Do</em></h1><div class="hero-bottom"><p>${esc(site.hero.intro)}</p><div class="hero-actions"><a class="button" href="${asset('/work/')}">UI/UX projects</a><a class="text-link" href="${asset('/graphics/')}">Graphic work</a></div></div><a class="scroll-cue" href="#work">Scroll to explore</a></section><section id="work" class="work-section container"><header class="section-title"><h2>Selected Work</h2><p>Product & UX design</p></header><div class="project-grid">${productCards}</div><a class="text-link section-link" href="${asset('/work/')}">Explore all UI/UX projects</a></section><section class="work-section container"><header class="section-title"><h2>Graphic Design</h2><a class="text-link" href="${asset('/graphics/')}">View all projects</a></header><div class="project-grid graphic-featured">${graphicCards}</div></section><section id="about" class="about-section container"><header class="section-title"><h2>About</h2></header>${aboutContent()}</section>${contact()}`;
+  }
+
+  function indexIntro(label, title, description) {
+    return `<section class="page-intro container"><p class="eyebrow">${esc(label)}</p><h1>${esc(title)}</h1><p>${esc(description)}</p></section>`;
+  }
+
+  function caseStudy(p, { prev, next, backHref = '/work/', backLabel = 'UI/UX Design' } = {}) {
+    const gallery = p.gallery || [];
+    const blocks = [];
+    if (p.overview) blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><p class="case-lead">${esc(p.overview)}</p></section>`);
+    if (p.problem) blocks.push(`<section class="case-section"><h2 class="eyebrow">The problem</h2><div class="prose"><p>${esc(p.problem)}</p></div></section>`);
+    if (Array.isArray(p.summary) && p.summary.length) blocks.push(`<section class="case-section"><h2 class="eyebrow">Project details</h2><div class="prose">${p.summary.map(t=>`<p>${esc(t)}</p>`).join('')}</div></section>`);
+    if (p.process?.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Process</h2><div class="process-grid">${p.process.map(step=>`<article><p class="eyebrow phase">${esc(step.phase)}</p><h3>${esc(step.title)}</h3><p>${esc(step.description)}</p></article>`).join('')}</div></section>`);
+    if (gallery.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Visuals</h2><div class="gallery-grid">${gallery.map((img,i)=>`<figure class="gallery-item${i===0?' gallery-item--wide':''}"><div><img src="${esc(img.src)}" alt="${esc(img.alt||p.title+' artwork '+(i+1))}" loading="lazy"></div><figcaption><span>${esc(img.caption||p.title+' — selected work')}</span><span>${String(i+1).padStart(2,'0')}</span></figcaption></figure>`).join('')}</div></section>`);
+    if (p.results?.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Outcomes</h2><div class="outcomes-grid">${p.results.map(r=>`<article><p class="result-value">${esc(r.value)}</p><h3>${esc(r.metric)}</h3><p>${esc(r.label)}</p></article>`).join('')}</div></section>`);
+    const meta = [['Role',p.role],['Duration',p.duration],['Team',p.team],['Year',p.year]].filter(([,v])=>v);
+    return `<article class="case-study"><div class="case-cover"${p.bg?` style="--project-bg:${esc(p.bg)}"`:''}>${p.image?`<img src="${esc(p.image)}" alt="${esc(p.title)} project overview" fetchpriority="high">`:''}<div class="case-cover-shade"></div><div class="case-cover-copy container"><a class="back-link" href="${asset(backHref)}">Back to ${esc(backLabel)}</a><p class="eyebrow">${esc(p.category)}${p.year?' · '+esc(p.year):''}</p><h1>${esc(p.title)}</h1></div></div><div class="case-facts-wrap"><dl class="case-facts container">${meta.map(([l,v])=>`<div><dt>${l}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></div><div class="case-body container">${blocks.join('')}<div class="case-tags">${tags(p.tags)}</div><nav class="project-navigation" aria-label="Other projects">${prev?`<a href="${asset(prev.href)}"><span>Previous project</span><strong>${esc(prev.title)}</strong></a>`:'<div></div>'}${next?`<a href="${asset(next.href)}"><span>Next project</span><strong>${esc(next.title)}</strong></a>`:''}</nav></div></article>`;
+  }
+
+  return { shell, card, contact, aboutContent, home, indexIntro, caseStudy };
+}
