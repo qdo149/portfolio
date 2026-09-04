@@ -11,6 +11,11 @@ function walk(dir) {
   }
 }
 walk(root);
+const homepage = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+assert(homepage.includes('class="hero-avatar"'), 'Homepage includes original avatar');
+assert(homepage.includes('data-typewriter'), 'Homepage includes typing greeting');
+assert(!homepage.includes('<h2>Graphic Design</h2>'), 'No graphic design section on homepage');
+assert(homepage.includes('Selected Work'), 'Homepage keeps product and UX projects');
 let links = 0;
 for (const page of pages) {
   const html = fs.readFileSync(page,'utf8');

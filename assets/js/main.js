@@ -20,6 +20,32 @@ if (toggle && nav) {
   });
 }
 
+// Animate once, keeping a complete heading available without JavaScript.
+const typing = document.querySelector("[data-typewriter]");
+if (typing) {
+  const fullText = typing.textContent;
+  const letters = Array.from(fullText);
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let timer;
+  let index = 0;
+  const finish = () => {
+    clearTimeout(timer);
+    typing.textContent = fullText;
+    typing.classList.remove("is-typing");
+  };
+  if (!motion.matches) {
+    typing.textContent = "";
+    typing.classList.add("is-typing");
+    const tick = () => {
+      typing.textContent = letters.slice(0, ++index).join("");
+      if (index < letters.length) timer = setTimeout(tick, 65);
+      else finish();
+    };
+    timer = setTimeout(tick, 200);
+    motion.addEventListener?.("change", finish, { once: true });
+  }
+}
+
 document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const track = carousel.querySelector("[data-carousel-track]");
   const previous = carousel.querySelector("[data-carousel-prev]");

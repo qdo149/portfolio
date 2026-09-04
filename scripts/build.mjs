@@ -67,8 +67,7 @@ fs.mkdirSync(dist,{recursive:true});
 fs.cpSync(path.join(root,"src/assets"),path.join(dist,"assets"),{recursive:true});
 
 write("index.html",ui.shell({title:"Product & Visual Designer",active:"home",body:ui.home({
-  productCards:featured.slice(0,3).map((p,i)=>ui.card(p,{featured:i===0})).join(""),
-  graphicCards:["rau-bistro","genex-marketing","urus"].map((slug,i)=>ui.card(graphicItems.find(p=>p.slug===slug),{featured:i===0})).join("")
+  productCards:featured.slice(0,3).map((p,i)=>ui.card(p,{featured:i===0})).join("")
 })}));
 write("work/index.html",ui.shell({title:"UI/UX Design",active:"work",body:
   ui.indexIntro("UI/UX Design","Selected work","Digital experiences across banking, fintech, telecom and member services.")+
