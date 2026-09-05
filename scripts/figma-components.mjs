@@ -40,6 +40,59 @@ export function createComponents({ asset, esc, site }) {
       if (Array.isArray(p.summary) && p.summary.length) blocks.push(`<section class="case-section"><h2 class="eyebrow">Project details</h2><div class="prose">${p.summary.map(t=>`<p>${esc(t)}</p>`).join('')}</div></section>`);
     }
     if (p.legacyBlocks?.length) {
+      const figure = block => `<figure class="legacy-visual"><img src="${esc(block.src)}" alt="${esc(block.alt || p.title + ' project visual')}" loading="lazy">${block.alt?`<figcaption>${esc(block.alt)}</figcaption>`:''}</figure>`;
+      const paragraph = block => `<p>${esc(block.text.replace(/\s+/g,' ').trim())}</p>`;
+      const genexLayout = () => {
+        const source = p.legacyBlocks;
+        const at = heading => source.findIndex(block => block.type === 'h2' && block.text.replace(/\s+/g,' ').trim() === heading);
+        const section = (heading, nextHeading) => source.slice(at(heading) + 1, nextHeading ? at(nextHeading) : source.length);
+        const standard = (heading, nextHeading) => {
+          let listOpen = false;
+          const body = section(heading, nextHeading).map(block => {
+            let html = '';
+            if (block.type !== 'li' && listOpen) { html += '</ul>'; listOpen = false; }
+            if (block.type === 'image') return html + figure(block);
+            if (block.type === 'h2') return html + `<h3>${esc(block.text)}</h3>`;
+            if (block.type === 'li') { if (!listOpen) { html += '<ul>'; listOpen = true; } return html + `<li>${esc(block.text)}</li>`; }
+            return html + paragraph(block);
+          }).join('') + (listOpen ? '</ul>' : '');
+          return `<section class="case-story-section"><h2>${esc(heading)}</h2>${body}</section>`;
+        };
+        const background = section('Client Background','Project Scope');
+        const backgroundIntro = background.find(block=>block.type==='p');
+        const backgroundImage = background.find(block=>block.type==='image');
+        const backgroundItems = background.reduce((items,block,index)=>{
+          if(block.type==='h2') items.push({heading:block.text,text:background[index+1]?.type==='p'?background[index+1].text:''});
+          return items;
+        },[]);
+        const goals = section('I. Defining Business Goals','II. Building Digital Roadmap');
+        const goalItems = goals.reduce((items,block,index)=>{
+          if(block.type==='image') items.push({image:block,heading:goals[index+1]?.text||'',text:goals[index+2]?.text||''});
+          return items;
+        },[]);
+        const roadmap = section('II. Building Digital Roadmap','III. Key Insights from User Research');
+        const roadmapText = roadmap.find(block=>block.type==='p');
+        const roadmapImages = roadmap.filter(block=>block.type==='image');
+        const insight = section('III. Key Insights from User Research','IV. Building Sitemap​');
+        return `<section class="case-story-section genex-background"><h2>Client Background</h2>${paragraph(backgroundIntro)}<div class="genex-background-grid">${figure(backgroundImage)}<div class="genex-background-list">${backgroundItems.map(item=>`<article><h3>${esc(item.heading)}</h3><p>${esc(item.text)}</p></article>`).join('')}</div></div></section>`+
+          standard('Project Scope','DESIGN PROCESS​')+
+          `<section class="case-story-section genex-section-label"><h2>DESIGN PROCESS</h2></section>`+
+          `<section class="case-story-section genex-goals"><h2>I. Defining Business Goals</h2>${goals[0]?.type==='p'?paragraph(goals[0]):''}<div class="genex-goal-grid">${goalItems.map(item=>`<article>${figure(item.image)}<h3>${esc(item.heading)}</h3><p>${esc(item.text)}</p></article>`).join('')}</div></section>`+
+          `<section class="case-story-section"><h2>II. Building Digital Roadmap</h2>${roadmapText?paragraph(roadmapText):''}<div class="genex-roadmap" aria-label="Four phases of the digital roadmap">${roadmapImages.map(figure).join('')}</div></section>`+
+          `<section class="case-story-section genex-insight"><div><h2>III. Key Insights from User Research</h2>${insight.filter(block=>block.type==='p').map(paragraph).join('')}</div>${insight.filter(block=>block.type==='image').map(figure).join('')}</section>`+
+          standard('IV. Building Sitemap​','V. Wireframes')+
+          standard('V. Wireframes','VI. User Interface Components')+
+          standard('VI. User Interface Components','DELIVERABLES')+
+          `<section class="case-story-section genex-section-label"><h2>DELIVERABLES</h2></section>`+
+          standard('I. Sign in/ Sign up Flow','II. User Dashboard & Profile Management:')+
+          standard('II. User Dashboard & Profile Management:','III. News, Community & Support')+
+          standard('III. News, Community & Support','IV. Prototype')+
+          standard('IV. Prototype','CONCLUSION')+
+          standard('CONCLUSION');
+      };
+      if (p.slug === 'genex-member-portal') {
+        blocks.push(`<section class="case-section case-section--wide legacy-case-content genex-content">${genexLayout()}</section>`);
+      } else {
       let listOpen = false;
       let sectionOpen = false;
       let sectionHeading = '';
@@ -58,6 +111,7 @@ export function createComponents({ asset, esc, site }) {
         return html + block.text.split(/\n{2,}/).filter(Boolean).map(text=>`<p>${esc(text.replace(/\s+/g,' ').trim())}</p>`).join('');
       }).join('') + (listOpen ? '</ul>' : '') + (sectionOpen ? sectionCarousel(sectionHeading) + '</section>' : '');
       blocks.push(`<section class="case-section case-section--wide legacy-case-content">${content}</section>`);
+      }
     }
     if (p.process?.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Process</h2><div class="process-grid">${p.process.map(step=>`<article><p class="eyebrow phase">${esc(step.phase)}</p><h3>${esc(step.title)}</h3><p>${esc(step.description)}</p></article>`).join('')}</div></section>`);
     if (gallery.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Visuals</h2><div class="gallery-grid">${gallery.map((img,i)=>`<figure class="gallery-item${i===0?' gallery-item--wide':''}"><div><img src="${esc(img.src)}" alt="${esc(img.alt||p.title+' artwork '+(i+1))}" loading="lazy"></div><figcaption><span>${esc(img.caption||p.title+' — selected work')}</span><span>${String(i+1).padStart(2,'0')}</span></figcaption></figure>`).join('')}</div></section>`);
