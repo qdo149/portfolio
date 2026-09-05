@@ -50,7 +50,7 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
   const track = carousel.querySelector("[data-carousel-track]");
   const previous = carousel.querySelector("[data-carousel-prev]");
   const next = carousel.querySelector("[data-carousel-next]");
-  const cards = [...carousel.querySelectorAll(".graphic-card")];
+  const cards = [...carousel.querySelectorAll(".graphic-card, [data-carousel-item]")];
   const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
   if (!track || !previous || !next || !cards.length) return;
 

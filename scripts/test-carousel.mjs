@@ -17,7 +17,7 @@ for (const width of [366,1100]) {
   Object.assign(track,{clientWidth:width,scrollLeft:0,getBoundingClientRect:()=>({left:64,width}),scrollTo:({left})=>{track.scrollLeft=left;}});
   const cards=Array.from({length:10},(_,i)=>({getBoundingClientRect:()=>({left:64+i*(cardWidth+24)-track.scrollLeft,width:cardWidth})}));
   const previous=new Element(),next=new Element(),dots=Array.from({length:10},()=>new Element());
-  const carousel={querySelector:s=>({'[data-carousel-track]':track,'[data-carousel-prev]':previous,'[data-carousel-next]':next})[s],querySelectorAll:s=>s==='.graphic-card'?cards:dots};
+  const carousel={querySelector:s=>({'[data-carousel-track]':track,'[data-carousel-prev]':previous,'[data-carousel-next]':next})[s],querySelectorAll:s=>s.includes('.graphic-card')?cards:dots};
   const document={querySelector:()=>null,querySelectorAll:()=>[carousel]};
   const window={matchMedia:()=>({matches:true}),addEventListener:()=>{}};
   vm.runInNewContext(fs.readFileSync('src/assets/js/main.js','utf8'),{document,window,getComputedStyle:()=>({columnGap:'24px'}),setTimeout,clearTimeout});

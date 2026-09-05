@@ -68,12 +68,14 @@ const productItems = projects.map(p => {
     if(index===0 && /^h[23]$/.test(block.type)) return false;
     if(block.type==="h2" && block.text.trim().toUpperCase()==="OVERVIEW") return false;
     if(block.type==="li" && block.text.includes("\n")) return false;
+    if(p.slug==="nab" && block.type==="image") return false;
     return true;
   });
   const inlineImages = new Set(legacyBlocks.filter(block=>block.type==="image").map(block=>clean(block.src)));
   return {...p, href:`/work/${p.slug}/`, category:m.sector, year:m.year, role:m.role,
     image:clean(p.cardImage||p.thumb), coverImage:originalHeroImages[p.slug], description:m.result, overview:m.result, tags:m.skills,
-    gallery:(original?.images||[]).map(image=>clean(image.src)).filter((src,i,all)=>src&&src!==clean(p.cardImage||p.thumb)&&!inlineImages.has(src)&&all.indexOf(src)===i).map(src=>({src})),
+    gallery:p.slug==="nab"?[]:(original?.images||[]).map(image=>clean(image.src)).filter((src,i,all)=>src&&src!==clean(p.cardImage||p.thumb)&&!inlineImages.has(src)&&all.indexOf(src)===i).map(src=>({src})),
+    caseCarousel:p.slug==="nab"?(original?.images||[]).map(image=>({src:clean(image.src),alt:image.alt||"NAB project visual"})):[],
     legacyBlocks,
     summary:(p.summary||[]).map(t=>t.replace(/\s+/g," ").trim()).filter(Boolean)};
 });
