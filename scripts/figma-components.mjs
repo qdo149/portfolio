@@ -32,21 +32,26 @@ export function createComponents({ asset, esc, site }) {
   function caseStudy(p, { prev, next, backHref = '/work/', backLabel = 'UI/UX Design' } = {}) {
     const gallery = p.gallery || [];
     const blocks = [];
-    if (p.overview) blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><p class="case-lead">${esc(p.overview)}</p></section>`);
-    if (p.problem) blocks.push(`<section class="case-section"><h2 class="eyebrow">The problem</h2><div class="prose"><p>${esc(p.problem)}</p></div></section>`);
-    if (Array.isArray(p.summary) && p.summary.length) blocks.push(`<section class="case-section"><h2 class="eyebrow">Project details</h2><div class="prose">${p.summary.map(t=>`<p>${esc(t)}</p>`).join('')}</div></section>`);
+    if (p.legacyBlocks?.length) {
+      blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><div class="prose">${(p.summary?.length?p.summary:[p.overview]).filter(Boolean).map(t=>`<p>${esc(t)}</p>`).join('')}</div></section>`);
+    } else {
+      if (p.overview) blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><p class="case-lead">${esc(p.overview)}</p></section>`);
+      if (p.problem) blocks.push(`<section class="case-section"><h2 class="eyebrow">The problem</h2><div class="prose"><p>${esc(p.problem)}</p></div></section>`);
+      if (Array.isArray(p.summary) && p.summary.length) blocks.push(`<section class="case-section"><h2 class="eyebrow">Project details</h2><div class="prose">${p.summary.map(t=>`<p>${esc(t)}</p>`).join('')}</div></section>`);
+    }
     if (p.legacyBlocks?.length) {
       let listOpen = false;
+      let sectionOpen = false;
       const content = p.legacyBlocks.map(block => {
         let html = '';
         if (block.type !== 'li' && listOpen) { html += '</ul>'; listOpen = false; }
-        if (block.type === 'image') return html + `<figure class="legacy-visual"><img src="${esc(block.src)}" alt="${esc(block.alt || p.title + ' project visual')}" loading="lazy"><figcaption>${esc(block.alt || p.title + ' — project visual')}</figcaption></figure>`;
-        if (block.type === 'h2') return html + `<h2>${esc(block.text)}</h2>`;
+        if (block.type === 'image') return html + `<figure class="legacy-visual"><img src="${esc(block.src)}" alt="${esc(block.alt || p.title + ' project visual')}" loading="lazy">${block.alt?`<figcaption>${esc(block.alt)}</figcaption>`:''}</figure>`;
+        if (block.type === 'h2') { if (sectionOpen) html += '</section>'; sectionOpen = true; return html + `<section class="case-story-section"><h2>${esc(block.text)}</h2>`; }
         if (block.type === 'h3') return html + `<h3>${esc(block.text)}</h3>`;
         if (block.type === 'li') { if (!listOpen) { html += '<ul>'; listOpen = true; } return html + `<li>${esc(block.text)}</li>`; }
-        return html + `<p>${esc(block.text).replace(/\n/g,'<br>')}</p>`;
-      }).join('') + (listOpen ? '</ul>' : '');
-      blocks.push(`<section class="case-section case-section--wide legacy-case-content"><p class="eyebrow">Full case study</p>${content}</section>`);
+        return html + block.text.split(/\n{2,}/).filter(Boolean).map(text=>`<p>${esc(text.replace(/\s+/g,' ').trim())}</p>`).join('');
+      }).join('') + (listOpen ? '</ul>' : '') + (sectionOpen ? '</section>' : '');
+      blocks.push(`<section class="case-section case-section--wide legacy-case-content">${content}</section>`);
     }
     if (p.process?.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Process</h2><div class="process-grid">${p.process.map(step=>`<article><p class="eyebrow phase">${esc(step.phase)}</p><h3>${esc(step.title)}</h3><p>${esc(step.description)}</p></article>`).join('')}</div></section>`);
     if (gallery.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Visuals</h2><div class="gallery-grid">${gallery.map((img,i)=>`<figure class="gallery-item${i===0?' gallery-item--wide':''}"><div><img src="${esc(img.src)}" alt="${esc(img.alt||p.title+' artwork '+(i+1))}" loading="lazy"></div><figcaption><span>${esc(img.caption||p.title+' — selected work')}</span><span>${String(i+1).padStart(2,'0')}</span></figcaption></figure>`).join('')}</div></section>`);
