@@ -173,6 +173,7 @@ main{padding-top:72px}
 .genex-background-list p,.genex-goal-grid p{color:var(--muted);line-height:1.65;margin:0}
 .genex-section-label{padding-bottom:26px}
 .genex-section-label>h2{font-family:var(--mono);font-size:.8125rem;letter-spacing:.12em;color:var(--blue);margin:0}
+.genex-section-label+.case-story-section{border-top:0;padding-top:32px}
 .genex-goal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,42px);margin-top:38px}
 .genex-goal-grid article{text-align:center}
 .genex-goal-grid .legacy-visual{margin:0 auto 24px;max-width:128px}
