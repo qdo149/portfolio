@@ -1,0 +1,412 @@
+{
+  "url": "https://www.quynhdo.ca/genex-member-portal/",
+  "blocks": [
+    {
+      "text": "UX Case Study: GENEX Member Portal Design Project",
+      "type": "h2"
+    },
+    {
+      "text": "OVERVIEW",
+      "type": "h2"
+    },
+    {
+      "text": "Client Background",
+      "type": "h2"
+    },
+    {
+      "text": "GENEX’s unique cooperative governance system, facilitated by the delegate and council system, offers the senior leadership at GENEX deep insight into their vision for the cooperative.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram.png 688w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram-300x294.png 300w",
+      "type": "image"
+    },
+    {
+      "text": "1. Membership\n\nEffects the board and makes changes to the bylaws",
+      "type": "li"
+    },
+    {
+      "text": "1. Membership",
+      "type": "h2"
+    },
+    {
+      "text": "Effects the board and makes changes to the bylaws",
+      "type": "p"
+    },
+    {
+      "text": "2. Board of Directors\n\nSets policy, selects and supervises management",
+      "type": "li"
+    },
+    {
+      "text": "2. Board of Directors",
+      "type": "h2"
+    },
+    {
+      "text": "Sets policy, selects and supervises management",
+      "type": "p"
+    },
+    {
+      "text": "3. Management\n\nCarries out policies, hires and supervises employees",
+      "type": "li"
+    },
+    {
+      "text": "3. Management",
+      "type": "h2"
+    },
+    {
+      "text": "Carries out policies, hires and supervises employees",
+      "type": "p"
+    },
+    {
+      "text": "4. Employees\n\nCarry out the tasks needed to operate the cooperative",
+      "type": "li"
+    },
+    {
+      "text": "4. Employees",
+      "type": "h2"
+    },
+    {
+      "text": "Carry out the tasks needed to operate the cooperative",
+      "type": "p"
+    },
+    {
+      "text": "Project Scope",
+      "type": "h2"
+    },
+    {
+      "text": "As the number of members grew, the cooperative foresaw the need to create a portal where members could interact with other members, be informed about new products and special promotions, sign up for events, all in one platform.",
+      "type": "p"
+    },
+    {
+      "text": "DESIGN PROCESS​",
+      "type": "h2"
+    },
+    {
+      "text": "I. Defining Business Goals",
+      "type": "h2"
+    },
+    {
+      "text": "The business goals for this project were to:",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606-150x150.png 150w",
+      "type": "image"
+    },
+    {
+      "text": "Streamline Communication",
+      "type": "h2"
+    },
+    {
+      "text": "Create a portal that serves as a central hub for efficient and targeted communication between GENEX and its member-owners.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488-150x150.png 150w",
+      "type": "image"
+    },
+    {
+      "text": "Centralize\nInformation",
+      "type": "h2"
+    },
+    {
+      "text": "Develop a platform where members can easily access updates, promotions, and actively participate in community discussions.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933-150x150.png 150w",
+      "type": "image"
+    },
+    {
+      "text": "Foster Community Engagement",
+      "type": "h2"
+    },
+    {
+      "text": "Integrate features that encourage collaboration, sharing of experiences, and networking among members.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119-150x150.png 150w",
+      "type": "image"
+    },
+    {
+      "text": "Modernize Design",
+      "type": "h2"
+    },
+    {
+      "text": "Create the UI to reflect a contemporary look of GENEX branding and enhance the overall user experience.",
+      "type": "p"
+    },
+    {
+      "text": "II. Building Digital Roadmap",
+      "type": "h2"
+    },
+    {
+      "text": "The management decided to break this project down into 4 phases. This case study will focus on phase 1, which centered on establishing fundamental functions for seamless internal communication and enhanced member experience.",
+      "type": "p"
+    },
+    {
+      "alt": "1 – 1",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-1.jpg",
+      "srcset": "",
+      "type": "image"
+    },
+    {
+      "alt": "1 – 2",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-2.jpg",
+      "srcset": "",
+      "type": "image"
+    },
+    {
+      "alt": "1 – 3",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-3.jpg",
+      "srcset": "",
+      "type": "image"
+    },
+    {
+      "alt": "1 – 4",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-4.jpg",
+      "srcset": "",
+      "type": "image"
+    },
+    {
+      "text": "III. Key Insights from User Research",
+      "type": "h2"
+    },
+    {
+      "text": "Farmers have been using traditional communication for a long time (mailing, paper newsletter). They have a website and blog post, however, it’s not convenient because they are too general, not well divided. Different member tiers have different access to information. There is a lack of controlling and organizing information, events. The platform needs to be user-friendly.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-1024x683.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-1024x683.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-300x200.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-768x512.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-1536x1024.jpg 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy.jpg 1800w",
+      "type": "image"
+    },
+    {
+      "text": "IV. Building Sitemap​",
+      "type": "h2"
+    },
+    {
+      "text": "Sorting out which features need to be focused on for phase 1 was a crucial part of the process. The sitemap was built keeping in mind the user research insights and the business goals of the project.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-7.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7.jpg 1920w, https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7-300x169.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7-1024x576.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7-768x432.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7-1536x864.jpg 1536w",
+      "type": "image"
+    },
+    {
+      "text": "V. Wireframes",
+      "type": "h2"
+    },
+    {
+      "text": "Phase 1 of the GENEX Member Portal Design Project focused on establishing fundamental functions for seamless internal communication and enhanced member experience. Some of the key features included in this phase were:",
+      "type": "p"
+    },
+    {
+      "text": "Member Profiles: Each member was given a profile where they could update their information, preferences, and view their activity on the portal.",
+      "type": "li"
+    },
+    {
+      "text": "News and Updates Section: A dedicated section was created where GENEX could post updates, new product information, and special promotions. This ensured that members had a single source of truth for all the latest information.",
+      "type": "li"
+    },
+    {
+      "text": "Community Forum: A forum was created where members could start discussions, ask questions, and share their experiences. This fostered a sense of community and encouraged active participation from the members.",
+      "type": "li"
+    },
+    {
+      "text": "Event Registration: A feature was added where members could view upcoming events and register for them directly from the portal.",
+      "type": "li"
+    },
+    {
+      "text": "Modern, User-Friendly Design: The portal was designed with a modern aesthetic and a user-friendly interface to enhance the overall user experience.",
+      "type": "li"
+    },
+    {
+      "text": "Responsive Design: The portal was made responsive so that it could be easily accessed on various devices including desktops, laptops, tablets, and mobile phones.",
+      "type": "li"
+    },
+    {
+      "text": "These features were designed keeping in mind the business goals of streamlined communication, centralized information, community engagement, and a modern design. They served as the foundation for the subsequent phases of the project.",
+      "type": "p"
+    },
+    {
+      "text": "VI. User Interface Components",
+      "type": "h2"
+    },
+    {
+      "text": "In developing the member portal design system for genex.coop, the focus is on enhancing user experience through intuitive design elements. These include a visually appealing calendar for event management, customizable dashboards for personalized updates, profile sections for managing user details, and a document library for easy access to resources. Strategic placement of call-to-action buttons ensures seamless engagement. By integrating these components into the existing framework, the portal maintains brand consistency while delivering an intuitive user experience.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components.png 1920w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components-300x185.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components-1024x633.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components-768x475.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components-1536x950.png 1536w",
+      "type": "image"
+    },
+    {
+      "text": "DELIVERABLES",
+      "type": "h2"
+    },
+    {
+      "text": "I. Sign in/ Sign up Flow",
+      "type": "h2"
+    },
+    {
+      "text": "Member accounts will be automatically created from our existing database, which will be seamlessly integrated into the portal's backend. Upon completion, members will receive a sign-in link to set up their account. Future members can easily sign up using their email and membership number, streamlining the onboarding process for all users.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1.png 1388w, https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1-300x179.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1-1024x612.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1-768x459.png 768w",
+      "type": "image"
+    },
+    {
+      "text": "II. User Dashboard & Profile Management:",
+      "type": "h2"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User.png 1750w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-270x300.png 270w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-920x1024.png 920w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-768x854.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-1381x1536.png 1381w",
+      "type": "image"
+    },
+    {
+      "text": "III. News, Community & Support",
+      "type": "h2"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User-%E2%80%93-1.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1.png 1750w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1-300x234.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1-1024x799.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1-768x599.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1-1536x1198.png 1536w",
+      "type": "image"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User-%E2%80%93-2.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2.png 1750w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-255x300.png 255w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-869x1024.png 869w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-768x904.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-1304x1536.png 1304w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-1739x2048.png 1739w",
+      "type": "image"
+    },
+    {
+      "text": "IV. Prototype",
+      "type": "h2"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/GENEX.gif",
+      "srcset": "",
+      "type": "image"
+    },
+    {
+      "text": "CONCLUSION",
+      "type": "h2"
+    },
+    {
+      "text": "The GENEX Member Portal Design Project represented a significant advancement in modernizing communication with member-owners, receiving praise from both management and members. Employing a user-centered approach, the portal established a robust foundation, streamlining communication, centralizing information access, and fostering community engagement. Despite challenges, such as the manual transfer of members and seamless integration with the cooperative website and e-commerce platform, the project achieved a commendable user satisfaction rate of over 85%.\n\nAddressing these challenges was vital to the success of the project. The manual transfer of members required meticulous attention to detail to avoid any loss or misrepresentation of member information. Additionally, integrating the portal with the cooperative website and e-commerce platform posed challenges, necessitating careful planning, coordination, and adjustments. Looking ahead, our goal is to build on this success, leveraging Azure's capabilities to enhance scalability and performance. Continuous user feedback will guide our innovation in the digital member engagement experience at GENEX, aiming for a 20% increase in member engagement.",
+      "type": "p"
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram.png 688w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Blue-and-Mint-Green-Cycle-Diagram-300x294.png 300w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-streamline-5841606-150x150.png 150w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-impact-5563488-150x150.png 150w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-community-1071933-150x150.png 150w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119.png 512w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119-300x300.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/noun-modern-5137119-150x150.png 150w"
+    },
+    {
+      "alt": "1 – 1",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-1.jpg",
+      "srcset": ""
+    },
+    {
+      "alt": "1 – 2",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-2.jpg",
+      "srcset": ""
+    },
+    {
+      "alt": "1 – 3",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-3.jpg",
+      "srcset": ""
+    },
+    {
+      "alt": "1 – 4",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-4.jpg",
+      "srcset": ""
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-1024x683.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-1024x683.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-300x200.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-768x512.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy-1536x1024.jpg 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/arzu-sendag-pBpji30qJvA-unsplash-copy.jpg 1800w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-%E2%80%93-7.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7.jpg 1920w, https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7-300x169.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7-1024x576.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7-768x432.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/02/1-–-7-1536x864.jpg 1536w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components.png 1920w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components-300x185.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components-1024x633.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components-768x475.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/03/Design-components-1536x950.png 1536w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1.png 1388w, https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1-300x179.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1-1024x612.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/04/Sign-In-1-768x459.png 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User.png 1750w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-270x300.png 270w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-920x1024.png 920w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-768x854.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-1381x1536.png 1381w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User-%E2%80%93-1.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1.png 1750w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1-300x234.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1-1024x799.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1-768x599.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-1-1536x1198.png 1536w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User-%E2%80%93-2.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2.png 1750w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-255x300.png 255w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-869x1024.png 869w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-768x904.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-1304x1536.png 1304w, https://www.quynhdo.ca/wp-content/uploads/2024/04/User-–-2-1739x2048.png 1739w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/GENEX.gif",
+      "srcset": ""
+    }
+  ],
+  "mainText": "UX Case Study: GENEX Member Portal Design Project\nOVERVIEW\nRole\nIn Q1 2023, I led a UI/UX project to build a member portal for GENEX, a global genetic and reproductive solutions provider for dairy and beef cattle producers. The project aimed to enhance communication between the company and its member-owners, fostering a community where product updates, promotions, and industry-related discussions can occur.\nTeam\nA UI/UX designer, 2 developers, a project manager\nTimeline\nQ1 2023\n\nSkills\n• Web & Responsive Design\n• UI/UX Design\n• Information Architecture\n• Prototyping\n• Design System\n• Product Thinking\nClient Background\n\nGENEX’s unique cooperative governance system, facilitated by the delegate and council system, offers the senior leadership at GENEX deep insight into their vision for the cooperative.\n\n1. Membership\n\nEffects the board and makes changes to the bylaws\n\n2. Board of Directors\n\nSets policy, selects and supervises management\n\n3. Management\n\nCarries out policies, hires and supervises employees\n\n4. Employees\n\nCarry out the tasks needed to operate the cooperative\n\nProject Scope\n\nAs the number of members grew, the cooperative foresaw the need to create a portal where members could interact with other members, be informed about new products and special promotions, sign up for events, all in one platform.\n\nI. Defining Business Goals\n\nThe business goals for this project were to:\n\nStreamline Communication\n\nCreate a portal that serves as a central hub for efficient and targeted communication between GENEX and its member-owners.\n\nCentralize\nInformation\n\nDevelop a platform where members can easily access updates, promotions, and actively participate in community discussions.\n\nFoster Community Engagement\n\nIntegrate features that encourage collaboration, sharing of experiences, and networking among members.\n\nModernize Design\n\nCreate the UI to reflect a contemporary look of GENEX branding and enhance the overall user experience.\n\nII. Building Digital Roadmap\n\nThe management decided to break this project down into 4 phases. This case study will focus on phase 1, which centered on establishing fundamental functions for seamless internal communication and enhanced member experience.\n\nIII. Key Insights from User Research\n\nFarmers have been using traditional communication for a long time (mailing, paper newsletter). They have a website and blog post, however, it’s not convenient because they are too general, not well divided. Different member tiers have different access to information. There is a lack of controlling and organizing information, events. The platform needs to be user-friendly.\n\nIV. Building Sitemap​\n\nSorting out which features need to be focused on for phase 1 was a crucial part of the process. The sitemap was built keeping in mind the user research insights and the business goals of the project.\n\nV. Wireframes\n\nPhase 1 of the GENEX Member Portal Design Project focused on establishing fundamental functions for seamless internal communication and enhanced member experience. Some of the key features included in this phase were:\n\nMember Profiles: Each member was given a profile where they could update their information, preferences, and view their activity on the portal.\nNews and Updates Section: A dedicated section was created where GENEX could post updates, new product information, and special promotions. This ensured that members had a single source of truth for all the latest information.\nCommunity Forum: A forum was created where members could start discussions, ask questions, and share their experiences. This fostered a sense of community and encouraged active participation from the members.\nEvent Registration: A feature was added where members could view upcoming events and register for them directly from the portal.\nModern, User-Friendly Design: The portal was designed with a modern aesthetic and a user-friendly interface to enhance the overall user experience.\nResponsive Design: The portal was made responsive so that it could be easily accessed on various devices including desktops, laptops, tablets, and mobile phones.\n\nThese features were designed keeping in mind the business goals of streamlined communication, centralized information, community engagement, and a modern design. They served as the foundation for the subsequent phases of the project.\n\nVI. User Interface Components\n\nIn developing the member portal design system for genex.coop, the focus is on enhancing user experience through intuitive design elements. These include a visually appealing calendar for event management, customizable dashboards for personalized updates, profile sections for managing user details, and a document library for easy access to resources. Strategic placement of call-to-action buttons ensures seamless engagement. By integrating these components into the existing framework, the portal maintains brand consistency while delivering an intuitive user experience.\n\nI. Sign in/ Sign up Flow\n\nMember accounts will be automatically created from our existing database, which will be seamlessly integrated into the portal's backend. Upon completion, members will receive a sign-in link to set up their account. Future members can easily sign up using their email and membership number, streamlining the onboarding process for all users.\n\nII. User Dashboard & Profile Management:\nIII. News, Community & Support\nIV. Prototype\n\nThe GENEX Member Portal Design Project represented a significant advancement in modernizing communication with member-owners, receiving praise from both management and members. Employing a user-centered approach, the portal established a robust foundation, streamlining communication, centralizing information access, and fostering community engagement. Despite challenges, such as the manual transfer of members and seamless integration with the cooperative website and e-commerce platform, the project achieved a commendable user satisfaction rate of over 85%.\n\nAddressing these challenges was vital to the success of the project. The manual transfer of members required meticulous attention to detail to avoid any loss or misrepresentation of member information. Additionally, integrating the portal with the cooperative website and e-commerce platform posed challenges, necessitating careful planning, coordination, and adjustments. Looking ahead, our goal is to build on this success, leveraging Azure's capabilities to enhance scalability and performance. Continuous user feedback will guide our innovation in the digital member engagement experience at GENEX, aiming for a 20% increase in member engagement.\n\nGENEX Member Portal\nShaw Direct\nHuey Lam Digital Tailor Shop\nCalgary Silkscreen\nRogers Bank\nRogers Together with Shaw",
+  "title": "GENEX Member Portal – qxyxhdodesign"
+}

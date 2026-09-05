@@ -21,6 +21,20 @@ const projects=[...site.projects].sort((a,b)=>(order.indexOf(a.slug)<0?99:order.
 const esc=(s="")=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 const asset=(p)=>{const base=p.startsWith("/assets/")?(process.env.ASSET_BASE_PATH||basePath):basePath;return base?`${base.replace(/\/$/,"")}${p}`:p;};
 const clean=(src="")=>src.split(/\s+\d+w,/)[0].trim();
+const originalCaseStudies = Object.fromEntries(
+  fs.readdirSync(path.join(root,"src/data"))
+    .filter(name=>name.startsWith("original-")&&name.endsWith(".json"))
+    .map(name=>[name.slice(9,-5),JSON.parse(fs.readFileSync(path.join(root,"src/data",name),"utf8"))])
+);
+const originalHeroImages = {
+  nab:"https://www.quynhdo.ca/wp-content/uploads/2026/05/Project-Hero-Banner-NAB-Large.jpeg",
+  "rogers-bank":"https://www.quynhdo.ca/wp-content/uploads/2024/10/Project-Hero-Banner-1-1.png",
+  "shaw-direct":"https://www.quynhdo.ca/wp-content/uploads/2024/09/Project-Hero-Banner-1.jpg",
+  "genex-member-portal":"https://www.quynhdo.ca/wp-content/uploads/2024/10/Project-Hero-Banner-GENEX.jpg",
+  "huey-lam-digital-tailor-shop":"https://www.quynhdo.ca/wp-content/uploads/2021/05/IMG_8938.jpg",
+  "rogers-together-with-shaw":"https://www.quynhdo.ca/wp-content/uploads/2024/10/Project-Hero-Banner-28.jpg",
+  "calgary-silkscreen":"https://www.quynhdo.ca/wp-content/uploads/2024/10/Project-Hero-Banner-silkscreen.jpg"
+};
 const write=(rel,html)=>{
   if(process.env.RELATIVE_URLS === "1") {
     html=html.replace(/(href|src)="\/(?!\/)([^"]*)"/g,(_,attribute,url)=>{
@@ -49,9 +63,18 @@ const graphicProjects=[
 const ui = createComponents({ asset, esc, site });
 const productItems = projects.map(p => {
   const m = meta[p.slug] || {sector:"Product design",year:"",role:"Product Designer",result:p.tagline,skills:[]};
+  const original = originalCaseStudies[p.slug];
+  const legacyBlocks = (original?.blocks||[]).filter((block,index)=>{
+    if(index===0 && /^h[23]$/.test(block.type)) return false;
+    if(block.type==="h2" && block.text.trim().toUpperCase()==="OVERVIEW") return false;
+    if(block.type==="li" && block.text.includes("\n")) return false;
+    return true;
+  });
+  const inlineImages = new Set(legacyBlocks.filter(block=>block.type==="image").map(block=>clean(block.src)));
   return {...p, href:`/work/${p.slug}/`, category:m.sector, year:m.year, role:m.role,
-    image:clean(p.cardImage||p.thumb), description:m.result, overview:m.result, tags:m.skills,
-    gallery:(p.gallery||[]).map(clean).filter((x,i,a)=>x&&a.indexOf(x)===i).slice(0,8).map(src=>({src})),
+    image:clean(p.cardImage||p.thumb), coverImage:originalHeroImages[p.slug], description:m.result, overview:m.result, tags:m.skills,
+    gallery:(original?.images||[]).map(image=>clean(image.src)).filter((src,i,all)=>src&&src!==clean(p.cardImage||p.thumb)&&!inlineImages.has(src)&&all.indexOf(src)===i).map(src=>({src})),
+    legacyBlocks,
     summary:(p.summary||[]).map(t=>t.replace(/\s+/g," ").trim()).filter(Boolean)};
 });
 const graphicItems = graphicProjects.map(p => {

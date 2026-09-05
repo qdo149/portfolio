@@ -1,0 +1,80 @@
+{
+  "url": "https://www.quynhdo.ca/rogers-bank/",
+  "blocks": [
+    {
+      "text": "Seamless Credit Card Application Process for Newcomers",
+      "type": "h2"
+    },
+    {
+      "text": "OVERVIEW",
+      "type": "h2"
+    },
+    {
+      "text": "How to create a smooth and reliable process credit card application for the newcomer?",
+      "type": "h2"
+    },
+    {
+      "text": "The aim of this project is to enhance the credit card application process for newcomers, focusing on integrating the Nova Credit step, which helps verify international credit records. The target audience consists primarily of immigrants, many of whom may fall into two groups:",
+      "type": "p"
+    },
+    {
+      "text": "Those unfamiliar with the Canadian credit system: Many immigrants might not have a strong understanding of how credit works in Canada.",
+      "type": "li"
+    },
+    {
+      "text": "Those aware of credit but uncertain about building credit in Canada: Some may have experience with credit but are unsure how to establish creditworthiness in a new country.",
+      "type": "li"
+    },
+    {
+      "text": "To create a smoother and more reliable process for these users, the application should:",
+      "type": "p"
+    },
+    {
+      "text": "Incorporate clear, straightforward questions related to the Nova Credit verification process.",
+      "type": "li"
+    },
+    {
+      "text": "Provide educational prompts explaining what credit is, why it's important, and how to build it in Canada, specifically aimed at users unfamiliar with the system.",
+      "type": "li"
+    },
+    {
+      "text": "Mobile-optimized design: Ensure that the entire process is mobile-friendly, as many users might apply using their smartphones.",
+      "type": "li"
+    },
+    {
+      "text": "Simplified forms: Keep the application process as simple and intuitive as possible. Use progressive disclosure to only show the necessary questions based on the user’s responses. This reduces cognitive load and improves the user experience.",
+      "type": "li"
+    },
+    {
+      "text": "Testing plays an important role in this process",
+      "type": "h2"
+    },
+    {
+      "text": "We worked through various user flows to develop a prototype that aligned with the project requirements. However, rather than relying on assumptions, we conducted 10 prototype testing interviews with a targeted customer group to validate our approach. These interviews provided valuable insights that confirmed several key points and highlighted areas for improvement. Based on this feedback, we were able to make informed adjustments and finalize the prototype to better meet user needs.",
+      "type": "p"
+    },
+    {
+      "text": "Next steps",
+      "type": "h2"
+    },
+    {
+      "text": "• The team was dedicating time to building out the applications that potential Rogers customers will utilize in August 2024.\n•Have the UXR team conduct user testing on the screens to identify any major usability issues or flaws in the user experience.\n•Track key metrics such as dropout rates and successful completion rates to compare the performance of the new flow against the existing.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-1536x1024.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1.jpg 2000w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-300x200.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-1024x682.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-768x512.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-1536x1024.jpg 1536w",
+      "type": "image"
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-1536x1024.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1.jpg 2000w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-300x200.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-1024x682.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-768x512.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Rogers-Bank-1-1536x1024.jpg 1536w"
+    }
+  ],
+  "mainText": "Seamless Credit Card Application Process for Newcomers\nOVERVIEW\nBackground\nRogers Bank, a subsidiary of Rogers Communications, offers credit card services with rewards, including cashback on Rogers services. Rogers partnered with Nova Credit to help newcomers establish credit by recognizing their international credit history.\n\nI was responsible for designing the credit card application for the newcomer program, integrating Nova Credit’s process into the main application flow\n\nIf you'd like to learn more, please feel free to contact me on Linkedin or Email.\nRole\nProduct Designer\nTimeline\n2023 – 2024\n\nSkills\n• Web & Responsive Design\n• UI/UX Design\n• Information Architecture\n• User Research\n\n\n• Prototyping\n• Design System\n• Product Thinking\nHow to create a smooth and reliable process credit card application for the newcomer?\n\nThe aim of this project is to enhance the credit card application process for newcomers, focusing on integrating the Nova Credit step, which helps verify international credit records. The target audience consists primarily of immigrants, many of whom may fall into two groups:\n\nThose unfamiliar with the Canadian credit system: Many immigrants might not have a strong understanding of how credit works in Canada.\nThose aware of credit but uncertain about building credit in Canada: Some may have experience with credit but are unsure how to establish creditworthiness in a new country.\n\nTo create a smoother and more reliable process for these users, the application should:\n\nIncorporate clear, straightforward questions related to the Nova Credit verification process.\nProvide educational prompts explaining what credit is, why it's important, and how to build it in Canada, specifically aimed at users unfamiliar with the system.\nMobile-optimized design: Ensure that the entire process is mobile-friendly, as many users might apply using their smartphones.\nSimplified forms: Keep the application process as simple and intuitive as possible. Use progressive disclosure to only show the necessary questions based on the user’s responses. This reduces cognitive load and improves the user experience.\n\nTesting plays an important role in this process\n\nWe worked through various user flows to develop a prototype that aligned with the project requirements. However, rather than relying on assumptions, we conducted 10 prototype testing interviews with a targeted customer group to validate our approach. These interviews provided valuable insights that confirmed several key points and highlighted areas for improvement. Based on this feedback, we were able to make informed adjustments and finalize the prototype to better meet user needs.\n\nNext steps\n\n• The team was dedicating time to building out the applications that potential Rogers customers will utilize in August 2024.\n•Have the UXR team conduct user testing on the screens to identify any major usability issues or flaws in the user experience.\n•Track key metrics such as dropout rates and successful completion rates to compare the performance of the new flow against the existing.\n\nGENEX Member Portal\nShaw Direct\nHuey Lam Digital Tailor Shop\nCalgary Silkscreen\nRogers Bank\nRogers Together with Shaw",
+  "title": "Rogers Bank – qxyxhdodesign"
+}

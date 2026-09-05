@@ -1,0 +1,358 @@
+{
+  "url": "https://www.quynhdo.ca/huey-lam-digital-tailor-shop/",
+  "blocks": [
+    {
+      "text": "Huey Lam's Suits Digital Tailor Shop",
+      "type": "h2"
+    },
+    {
+      "text": "How a tailoring business survive during the pandemic?",
+      "type": "p"
+    },
+    {
+      "text": "OVERVIEW",
+      "type": "h2"
+    },
+    {
+      "text": "DISCOVERY",
+      "type": "h2"
+    },
+    {
+      "text": "I. The fresh look of the site with new branding​",
+      "type": "h3"
+    },
+    {
+      "text": "Since the visual aesthetic has been developed, the next step is revamping the website, which supposed not to be challenging as there is a creative direction to follow. I like the contents were put on the old site, which is really business-focused and reflect the niche and style that the store offer to their customer. However, the visual impression was generic and not strong, the main color didn't speak for the attentive workmanship and elegant values of the business. I decided to keep the main wireframe and just performed the modification on layouts, photography, typography and color palette. On top of that, I contacted Sarah - a copywriter to help us audit writing and SEO.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1.jpg 1440w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-144x300.jpg 144w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-492x1024.jpg 492w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-768x1600.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-737x1536.jpg 737w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-983x2048.jpg 983w",
+      "type": "image"
+    },
+    {
+      "text": "DESIGN PROCESS",
+      "type": "h2"
+    },
+    {
+      "text": "I. Understanding the tailoring process",
+      "type": "h2"
+    },
+    {
+      "text": "Contextual research from observation",
+      "type": "h2"
+    },
+    {
+      "text": "To begin with, I set up several meetings with the owner so he could guide me through the tailoring process. Despite the fact that there is the process diagram on their main page, I still urged for more details. All the info I collected up until then was mainly analytics data and a few assumptions, so learning how and why clients were buying their suits was crucial. Then I spent extra 30 minutes after the meeting observing how Huey work with the customer to construct an empathy map. I also got a lot of notes from the folks on Reddit looking for a recommendation of a place to get their customized suits, which is intrigued me a lot to see which makes them choose Huey Lam among other places.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429.jpg 1109w, https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429-300x210.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429-1024x718.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429-768x539.jpg 768w",
+      "type": "image"
+    },
+    {
+      "text": "Key Findings",
+      "type": "h2"
+    },
+    {
+      "text": "I conducted an interview with 3 regular customers and 2 potential clients to develop user personas and clear the consumption I had picked about the process so far. After that, I'm coming up with the initial flow",
+      "type": "p"
+    },
+    {
+      "text": "Fabric selection",
+      "type": "li"
+    },
+    {
+      "text": "Component selection (like collar and cuffs)",
+      "type": "li"
+    },
+    {
+      "text": "Measurements input places.",
+      "type": "li"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444.jpg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444-300x200.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444-1024x683.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444-768x512.jpg 768w",
+      "type": "image"
+    },
+    {
+      "text": "However, there is still something off about the flow that could be improved. There are a ton of fabric options and every customer I talked to seemed to want to see and feel the fabric samples rather than choosing them from little thumbnails.\n\nThanks to the folks from Reddit, I got to know that the distinction they trust Huey Lam is the way he makes the comfortable suits, not really about the fabric. Therefore I omit the fabric selection step from the steps. My goal is to create the straight, simplest and fast but valid online shopping experience.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877.png 1438w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877-300x221.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877-1024x754.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877-768x566.png 768w",
+      "type": "image"
+    },
+    {
+      "text": "With data from the user interview, I identified the pain points during the whole process of ordering a customize suit online. 90% of customers prefer coming to the store and talk with a tailor instead of completing the purchase entirely online.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Purple-Working-Remotely-Vectors-Creative-Presentation-2.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Purple-Working-Remotely-Vectors-Creative-Presentation-2.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Purple-Working-Remotely-Vectors-Creative-Presentation-2-300x225.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Purple-Working-Remotely-Vectors-Creative-Presentation-2-768x576.jpg 768w",
+      "type": "image"
+    },
+    {
+      "text": "Hence, here is the elaborate user flow",
+      "type": "h2"
+    },
+    {
+      "text": "Product Selection\n\nChoose whether they want shirts, suits, accessories or all of them. Pick the prefer style.",
+      "type": "li"
+    },
+    {
+      "text": "Product Selection",
+      "type": "h2"
+    },
+    {
+      "text": "Choose whether they want shirts, suits, accessories or all of them. Pick the prefer style.",
+      "type": "p"
+    },
+    {
+      "text": "Component Selection (like collar and cuffs)\n\nBreak into small steps with basic options in order not to overwhelm the users",
+      "type": "li"
+    },
+    {
+      "text": "Component Selection (like collar and cuffs)",
+      "type": "h2"
+    },
+    {
+      "text": "Break into small steps with basic options in order not to overwhelm the users",
+      "type": "p"
+    },
+    {
+      "text": "Check Out\n\nBased on type of product, location and need of client, they will get different instruction for next step",
+      "type": "li"
+    },
+    {
+      "text": "Check Out",
+      "type": "h2"
+    },
+    {
+      "text": "Based on type of product, location and need of client, they will get different instruction for next step",
+      "type": "p"
+    },
+    {
+      "text": "Measurements Inputs\n\nFor customer who purchase the customized pieces, they will be asked to book a virtual fitting with the tailor",
+      "type": "li"
+    },
+    {
+      "text": "Measurements Inputs",
+      "type": "h2"
+    },
+    {
+      "text": "For customer who purchase the customized pieces, they will be asked to book a virtual fitting with the tailor",
+      "type": "p"
+    },
+    {
+      "text": "II. Turning business online display to digital tailoring space",
+      "type": "h2"
+    },
+    {
+      "text": "Sitemap Proposal",
+      "type": "h2"
+    },
+    {
+      "text": "The current website acts like a showroom where people go on there and take a glimpse of what kind of service the store offer. There is a product page but lacks information and not purchasable. Aside from putting commerce space, I need to complete footer section.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM.png 1748w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM-300x151.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM-1024x514.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM-768x386.png 768w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM-1536x772.png 1536w",
+      "type": "image"
+    },
+    {
+      "text": "Product hierarchy",
+      "type": "h2"
+    },
+    {
+      "text": "Researching competitor gives me an insight into how the products should be laid out. One of the pain points users mentioned to me in term of doing tailor shopping is too many choices and they seems to overwhelm their customer with choices and options. I decide to simplify the process by break down our shop into 3 sections: shirts, suits and accessories.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM.png 1574w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM-300x194.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM-1024x664.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM-768x498.png 768w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM-1536x995.png 1536w",
+      "type": "image"
+    },
+    {
+      "text": "Product Category Screens",
+      "type": "h2"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1.jpg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1-300x188.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1-1024x640.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1-768x480.jpg 768w",
+      "type": "image"
+    },
+    {
+      "text": "Product components",
+      "type": "h2"
+    },
+    {
+      "text": "As the measurement and product details will be sent to Vietnam for cutting and assembly, then Huey will do the final fitting to deliver the highest quality and fit comfortably on clients. Therefore, the data collected from carts should be matched with the system be used overseas. In addition, I conducted user testing on the competitive websites and perform force ranking among the same groups of users to execute the most seamless flow for the customizing process.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM.png 1128w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM-300x181.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM-1024x617.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM-768x463.png 768w",
+      "type": "image"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2.jpg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2-300x188.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2-1024x640.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2-768x480.jpg 768w",
+      "type": "image"
+    },
+    {
+      "text": "Checkout Point & Fitting Process",
+      "type": "h2"
+    },
+    {
+      "text": "The checkout point is broken down into separate stages. The main reason is the quantities of the product components themselves are overwhelming customer's attention and seeing endless walls of input fields and forms in one can easily drain them out.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3.jpeg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3.jpeg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3-300x188.jpeg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3-1024x640.jpeg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3-768x480.jpeg 768w",
+      "type": "image"
+    },
+    {
+      "text": "I also modified the form sending to the customer by editing the CSS code in template files, providing consistent branding across medium and channel.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process.jpeg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process.jpeg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process-289x300.jpeg 289w, https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process-988x1024.jpeg 988w, https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process-768x796.jpeg 768w",
+      "type": "image"
+    },
+    {
+      "text": "The answers for frequently asked questions are placed in accordion in order to cover as many questions as we can on 1 page. The customer will be able to find the answers to their question easily without reading wall of text and confused browsing around the site to get the solution for their problems.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/faq.jpeg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/faq.jpeg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/faq-300x206.jpeg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/faq-1024x701.jpeg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/faq-768x526.jpeg 768w",
+      "type": "image"
+    },
+    {
+      "text": "Prototype",
+      "type": "h2"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Huey-Lam.gif",
+      "srcset": "",
+      "type": "image"
+    },
+    {
+      "text": "REFLECTION",
+      "type": "h2"
+    },
+    {
+      "text": "This is the most versatile that I have done so far and I'm so proud of myself for taking big responsibility for it: from branding, graphic design, web design, photography, outsource content writer even a little bit of coding. It took me a year to come to this stage of the project, like flying on a roller coaster, there is thrills, worries, uncertain feeling but full of excitement and satisfaction to see the final pieces I made. The project is still ongoing with several revisions and improvements, and here are some key takeaways I got for myself.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/giphy-2.gif",
+      "srcset": "",
+      "type": "image"
+    },
+    {
+      "text": "1. Balancing the business's need and user's need\nSometimes there's no alignment in values between the business and customer, as a designer, using data and objectives from research and client meetings to make the right decision for the product\n\n2. Working cross-functionally\nIt was important to engage with many parties during this project. These interactions clarified business goals, provided insight into the key areas of improvement and help the progress work smoothly.\n\n3. I can wear hat! (and many hats)\nAt the early stage of my career, I'm trying to get involved in as many aspects of a project as possible. At first, I was contacted to shoot for Huey's new lookbook and I end up taking part in their business evolution. One skill I have been sharpened effectively during this project definitely is my web design and coding, from basic HTML, CSS and WordPress, now I'm really comfortable coming up with more ways to complete client's requests regarding websites using advanced programming skills.",
+      "type": "p"
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1.jpg 1440w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-144x300.jpg 144w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-492x1024.jpg 492w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-768x1600.jpg 768w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-737x1536.jpg 737w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Untitled-1-983x2048.jpg 983w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429.jpg 1109w, https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429-300x210.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429-1024x718.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/empathy-map-e1728281138429-768x539.jpg 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444.jpg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444-300x200.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444-1024x683.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/DSC01444-768x512.jpg 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877.png 1438w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877-300x221.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877-1024x754.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-19-at-11.37.49-PM-e1728281197877-768x566.png 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Purple-Working-Remotely-Vectors-Creative-Presentation-2.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Purple-Working-Remotely-Vectors-Creative-Presentation-2.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Purple-Working-Remotely-Vectors-Creative-Presentation-2-300x225.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Purple-Working-Remotely-Vectors-Creative-Presentation-2-768x576.jpg 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM.png 1748w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM-300x151.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM-1024x514.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM-768x386.png 768w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-21-at-12.19.33-AM-1536x772.png 1536w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM.png 1574w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM-300x194.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM-1024x664.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM-768x498.png 768w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-2.05.36-PM-1536x995.png 1536w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1.jpg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1-300x188.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1-1024x640.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen1-768x480.jpg 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM.png 1128w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM-300x181.png 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM-1024x617.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/Screen-Shot-2021-05-24-at-10.14.43-PM-768x463.png 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2.jpg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2.jpg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2-300x188.jpg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2-1024x640.jpg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen2-768x480.jpg 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3.jpeg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3.jpeg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3-300x188.jpeg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3-1024x640.jpeg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/screen3-768x480.jpeg 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process.jpeg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process.jpeg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process-289x300.jpeg 289w, https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process-988x1024.jpeg 988w, https://www.quynhdo.ca/wp-content/uploads/2021/05/order-process-768x796.jpeg 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/faq.jpeg",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2021/05/faq.jpeg 1200w, https://www.quynhdo.ca/wp-content/uploads/2021/05/faq-300x206.jpeg 300w, https://www.quynhdo.ca/wp-content/uploads/2021/05/faq-1024x701.jpeg 1024w, https://www.quynhdo.ca/wp-content/uploads/2021/05/faq-768x526.jpeg 768w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Huey-Lam.gif",
+      "srcset": ""
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2021/05/giphy-2.gif",
+      "srcset": ""
+    }
+  ],
+  "mainText": "Huey Lam's Suits Digital Tailor Shop\n\nHow a tailoring business survive during the pandemic?\n\nIntro\nRebrand with an updated logo and visual system. Design a responsive e-commerce website that walks clients through the purchase process seamlessly\nRole\nProduct designer\nTimeline\n2020\n\nSkills\n• Graphic Design\n• UI/UX Design\n• Information Architecture\n• Prototyping\n• Design System\n• Product Thinking\nI. The fresh look of the site with new branding​\n\nSince the visual aesthetic has been developed, the next step is revamping the website, which supposed not to be challenging as there is a creative direction to follow. I like the contents were put on the old site, which is really business-focused and reflect the niche and style that the store offer to their customer. However, the visual impression was generic and not strong, the main color didn't speak for the attentive workmanship and elegant values of the business. I decided to keep the main wireframe and just performed the modification on layouts, photography, typography and color palette. On top of that, I contacted Sarah - a copywriter to help us audit writing and SEO.\n\nI. Understanding the tailoring process\nContextual research from observation\n\nTo begin with, I set up several meetings with the owner so he could guide me through the tailoring process. Despite the fact that there is the process diagram on their main page, I still urged for more details. All the info I collected up until then was mainly analytics data and a few assumptions, so learning how and why clients were buying their suits was crucial. Then I spent extra 30 minutes after the meeting observing how Huey work with the customer to construct an empathy map. I also got a lot of notes from the folks on Reddit looking for a recommendation of a place to get their customized suits, which is intrigued me a lot to see which makes them choose Huey Lam among other places.\n\nKey Findings\n\nI conducted an interview with 3 regular customers and 2 potential clients to develop user personas and clear the consumption I had picked about the process so far. After that, I'm coming up with the initial flow\n\n\nFabric selection\nComponent selection (like collar and cuffs)\nMeasurements input places.\n\nHowever, there is still something off about the flow that could be improved. There are a ton of fabric options and every customer I talked to seemed to want to see and feel the fabric samples rather than choosing them from little thumbnails.\n\nThanks to the folks from Reddit, I got to know that the distinction they trust Huey Lam is the way he makes the comfortable suits, not really about the fabric. Therefore I omit the fabric selection step from the steps. My goal is to create the straight, simplest and fast but valid online shopping experience.\n\nWith data from the user interview, I identified the pain points during the whole process of ordering a customize suit online. 90% of customers prefer coming to the store and talk with a tailor instead of completing the purchase entirely online.\n\nHence, here is the elaborate user flow\nProduct Selection\n\nChoose whether they want shirts, suits, accessories or all of them. Pick the prefer style.\n\nComponent Selection (like collar and cuffs)\n\nBreak into small steps with basic options in order not to overwhelm the users\n\nCheck Out\n\nBased on type of product, location and need of client, they will get different instruction for next step\n\nMeasurements Inputs\n\nFor customer who purchase the customized pieces, they will be asked to book a virtual fitting with the tailor\n\nII. Turning business online display to digital tailoring space\nSitemap Proposal\n\nThe current website acts like a showroom where people go on there and take a glimpse of what kind of service the store offer. There is a product page but lacks information and not purchasable. Aside from putting commerce space, I need to complete footer section.\n\nProduct hierarchy\n\nResearching competitor gives me an insight into how the products should be laid out. One of the pain points users mentioned to me in term of doing tailor shopping is too many choices and they seems to overwhelm their customer with choices and options. I decide to simplify the process by break down our shop into 3 sections: shirts, suits and accessories.\n\nProduct Category Screens\nProduct components\n\nAs the measurement and product details will be sent to Vietnam for cutting and assembly, then Huey will do the final fitting to deliver the highest quality and fit comfortably on clients. Therefore, the data collected from carts should be matched with the system be used overseas. In addition, I conducted user testing on the competitive websites and perform force ranking among the same groups of users to execute the most seamless flow for the customizing process.\n\nCheckout Point & Fitting Process\n\nThe checkout point is broken down into separate stages. The main reason is the quantities of the product components themselves are overwhelming customer's attention and seeing endless walls of input fields and forms in one can easily drain them out.\n\nI also modified the form sending to the customer by editing the CSS code in template files, providing consistent branding across medium and channel.\n\nThe answers for frequently asked questions are placed in accordion in order to cover as many questions as we can on 1 page. The customer will be able to find the answers to their question easily without reading wall of text and confused browsing around the site to get the solution for their problems.\n\nPrototype\n\nThis is the most versatile that I have done so far and I'm so proud of myself for taking big responsibility for it: from branding, graphic design, web design, photography, outsource content writer even a little bit of coding. It took me a year to come to this stage of the project, like flying on a roller coaster, there is thrills, worries, uncertain feeling but full of excitement and satisfaction to see the final pieces I made. The project is still ongoing with several revisions and improvements, and here are some key takeaways I got for myself.\n\n1. Balancing the business's need and user's need\nSometimes there's no alignment in values between the business and customer, as a designer, using data and objectives from research and client meetings to make the right decision for the product\n\n2. Working cross-functionally\nIt was important to engage with many parties during this project. These interactions clarified business goals, provided insight into the key areas of improvement and help the progress work smoothly.\n\n3. I can wear hat! (and many hats)\nAt the early stage of my career, I'm trying to get involved in as many aspects of a project as possible. At first, I was contacted to shoot for Huey's new lookbook and I end up taking part in their business evolution. One skill I have been sharpened effectively during this project definitely is my web design and coding, from basic HTML, CSS and WordPress, now I'm really comfortable coming up with more ways to complete client's requests regarding websites using advanced programming skills.\n\nGENEX Member Portal\nShaw Direct\nHuey Lam Digital Tailor Shop\nCalgary Silkscreen\nRogers Bank\nRogers Together with Shaw",
+  "title": "Huey Lam Digital Tailor Shop – qxyxhdodesign"
+}

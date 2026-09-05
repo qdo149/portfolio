@@ -1,0 +1,201 @@
+{
+  "url": "https://www.quynhdo.ca/shaw-direct/",
+  "blocks": [
+    {
+      "text": "Shaw Direct - Plan Builder Improvement",
+      "type": "h2"
+    },
+    {
+      "text": "OVERVIEW",
+      "type": "h2"
+    },
+    {
+      "text": "PROBLEM",
+      "type": "h2"
+    },
+    {
+      "text": "Streamline Your Digital Experience: Elevating the Buy Flow with a Smarter, Intuitive Plan Builder",
+      "type": "h2"
+    },
+    {
+      "text": "Improving customer experience with a \"plan builder\". A builder will allow customers to customize their television service package according to their preferences and needs.",
+      "type": "p"
+    },
+    {
+      "text": "DESIGN PROCESS​",
+      "type": "h2"
+    },
+    {
+      "text": "I. Reduce confusion with better CTA for a more intuitive design",
+      "type": "h2"
+    },
+    {
+      "text": "After conducting a content square analysis to pinpoint friction points on shawdirect.ca, a notable issue emerged: 5.60% of customers exit the plan builder interface to revisit the packages page after their initial view. This behavior stems from a desire to alter their selected package, as they're unaware that they can modify their plan directly within the builder. This results in a 6% drop in conversion rates when compared to customers who remain within the builder to make adjustments.\n\nTo address this, we aim to enhance the user experience by ensuring all customers understand they can modify their selected plan from within the builder interface, thereby reducing cart drop-off rates.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-1536x750.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-2048x999.png 2048w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-300x146.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-1024x500.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-768x375.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-1536x750.png 1536w",
+      "type": "image"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-1536x997.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02.png 1692w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-300x195.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-1024x665.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-768x498.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-1536x997.png 1536w",
+      "type": "image"
+    },
+    {
+      "text": "Customers are currently able to change their plan by clicking on the “Select a TV plan” CTA. But it seems to not prominent enough to encourage them to click on it instead of going back",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03.png 2188w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-300x211.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-1024x720.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-768x540.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-1536x1080.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-2048x1440.png 2048w",
+      "type": "image"
+    },
+    {
+      "text": "Adding an edit block below the block indicating the package has been added\nThis option provides a clear and direct way for users to edit their selected package. Placing the edit block below the \"Added\" block maintains visual continuity and guides users to the appropriate action without confusion on.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05.png 2188w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-300x211.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-1024x720.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-768x540.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-1536x1080.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-2048x1440.png 2048w",
+      "type": "image"
+    },
+    {
+      "text": "Adding a navigate link below the \"Added\" block\nThis option offers a more subtle approach to indicating the edit option. While this option may provide a cleaner visual design, there is a risk that users may overlook or miss the link, especially if it is not clearly differentiated from surrounding elements.",
+      "type": "p"
+    },
+    {
+      "text": "Option 1 was chosen because it seamlessly integrates with the existing system. By placing the edit block below the \"Added\" block, we maintain consistency and familiarity for users. This ensures that users can easily locate and utilize the edit option without confusion. Overall, Option 1 provides a user-friendly solution that fits seamlessly within the existing interface, facilitating a smooth editing experience.",
+      "type": "p"
+    },
+    {
+      "text": "II. Is a CTA necessary, or could it be replaced with a link?",
+      "type": "h2"
+    },
+    {
+      "text": "The header within the builder interface is currently oversized, occupying too much space on the page. There is excessive white space between the supporting text, header, and buttons. Additionally, the 'Back to Shopping' button is highly prominent and redirects users to the home page when clicked. While it's essential to guide customers through the configuration process, we should offer them a way to backtrack without giving this option too much prominence.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1.png 4500w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-300x103.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-1024x350.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-768x262.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-1536x525.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-2048x700.png 2048w",
+      "type": "image"
+    },
+    {
+      "text": "An optimizely test was done in June 2022 that tested removing the “Back to shopping” CTA and removing it actually reduced conversion rate, which is why the CTA was kept there following the test. A potential reason for this could have been the excessive empty blue space on the right since the text appears in 2 lines on the left. We could re-test with updating the spacing on the banner, or keeping the CTA but changing its size.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2.png 2250w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-300x103.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-1024x350.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-768x262.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-1536x525.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-2048x700.png 2048w",
+      "type": "image"
+    },
+    {
+      "text": "Deprioritizing the 'Back to TV Packages' option helps minimize decision points, improving user focus and speeding up the decision-making process. By reducing the number of available actions—especially removing an option that takes users backward—we streamline the flow and encourage forward momentum in the checkout process.\n\nHowever, to maintain usability without cluttering the primary action path, we could introduce a subtle, less prominent way for users to return to the TV package. This would allow users to proceed without distractions while still providing an option for those who wish to review their selections.\"",
+      "type": "p"
+    },
+    {
+      "text": "III. Simplify the channel selection interface for a more user-friendly experience.",
+      "type": "h2"
+    },
+    {
+      "text": "During our review of the channel selector in the Shaw Direct builder, we identified a significant usability issue. The presence of individual \"Add\" buttons for each channel creates visual clutter and confusion for users. Additionally, these CTAs closely resemble the primary conversion CTAs, leading to potential user errors and frustration.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-1024x682.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-1024x682.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-300x200.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-768x512.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-1536x1023.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3.png 1692w",
+      "type": "image"
+    },
+    {
+      "text": "These UX improvements aim to streamline the channel selection process, reduce user effort, and enhance overall satisfaction with the Shaw Direct builder interface. By implementing these changes, we can create a more intuitive and user-friendly experience for customers, ultimately improving conversion rates and customer retention.",
+      "type": "p"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-1.gif",
+      "srcset": "",
+      "type": "image"
+    },
+    {
+      "text": "The positive feedback on the proposal can be attributed to several key UX principles:",
+      "type": "p"
+    },
+    {
+      "text": "Progressive Disclosure: The step-by-step indicator provides just the right amount of information at each stage of the plan builder, reducing cognitive load. Customers can focus on the current task while having a clear view of the overall process, making the experience feel less overwhelming.",
+      "type": "li"
+    },
+    {
+      "text": "Feedback and Visibility of System Status: The progress indicator ensures customers are always informed about where they are in the journey and what steps remain. This transparency gives users a sense of control and reduces uncertainty, improving overall satisfaction.",
+      "type": "li"
+    },
+    {
+      "text": "Consistency: A modern, cohesive design and intuitive interface build familiarity and trust. When users encounter a clean and predictable design, they feel more confident navigating and making decisions.",
+      "type": "li"
+    },
+    {
+      "text": "The design was approved and sent to the development team, but due to changes in the management team, a new direction was taken for this product. I also transitioned to another team, so only two other improvements were implemented on the live website.",
+      "type": "p"
+    },
+    {
+      "text": "CONCLUSION",
+      "type": "h2"
+    },
+    {
+      "text": "At Shaw Direct, I frequently collaborated with the development team to navigate design constraints. Due to some circumstances, Shaw Direct wasn't a business priority, and the outdated CMS made building new components time-consuming. This created a balance between business goals and customer needs.\n\nAs a UX designer, I prioritize delivering the best customer experience while considering business constraints. User needs drive the solutions, and business needs act as boundaries. My approach focuses on feasibility, ROI, and balancing impact versus effort, both in building and long-term maintenance, to help stakeholders make informed decisions.",
+      "type": "p"
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-1536x750.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-2048x999.png 2048w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-300x146.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-1024x500.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-768x375.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Graphic-1536x750.png 1536w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-1536x997.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02.png 1692w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-300x195.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-1024x665.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-768x498.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Original-02-1536x997.png 1536w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03.png 2188w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-300x211.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-1024x720.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-768x540.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-1536x1080.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-03-2048x1440.png 2048w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05.png 2188w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-300x211.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-1024x720.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-768x540.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-1536x1080.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Options-05-2048x1440.png 2048w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1.png 4500w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-300x103.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-1024x350.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-768x262.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-1536x525.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-1-2048x700.png 2048w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2.png 2250w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-300x103.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-1024x350.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-768x262.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-1536x525.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Header-Option-2-2048x700.png 2048w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-1024x682.png",
+      "srcset": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-1024x682.png 1024w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-300x200.png 300w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-768x512.png 768w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3-1536x1023.png 1536w, https://www.quynhdo.ca/wp-content/uploads/2024/10/Channel-Selection-3.png 1692w"
+    },
+    {
+      "alt": "",
+      "src": "https://www.quynhdo.ca/wp-content/uploads/2024/10/Shaw-1.gif",
+      "srcset": ""
+    }
+  ],
+  "mainText": "Shaw Direct - Plan Builder Improvement\nOVERVIEW\nRole\nI joined Shaw in 2022 as the sole UI/UX designer for Shaw Direct, where I was primarily responsible for improving the website’s buy-flow and navigation to enhance the overall customer experience.\nTeams\nDigital Customer Experience, Shaw Direct\nTimeline\nOctoberber 2022 – March 2023\n\nSkills\n• Web & Responsive Design\n• UI/UX Design\n• User Testing\n• Prototyping\n• Design System\n• Product Thinking\nStreamline Your Digital Experience: Elevating the Buy Flow with a Smarter, Intuitive Plan Builder\n\nImproving customer experience with a \"plan builder\". A builder will allow customers to customize their television service package according to their preferences and needs.\n\nI. Reduce confusion with better CTA for a more intuitive design\n\nAfter conducting a content square analysis to pinpoint friction points on shawdirect.ca, a notable issue emerged: 5.60% of customers exit the plan builder interface to revisit the packages page after their initial view. This behavior stems from a desire to alter their selected package, as they're unaware that they can modify their plan directly within the builder. This results in a 6% drop in conversion rates when compared to customers who remain within the builder to make adjustments.\n\nTo address this, we aim to enhance the user experience by ensuring all customers understand they can modify their selected plan from within the builder interface, thereby reducing cart drop-off rates.\n\nCustomers are currently able to change their plan by clicking on the “Select a TV plan” CTA. But it seems to not prominent enough to encourage them to click on it instead of going back\n\nProposed solutions:\n\nAdding an edit block below the block indicating the package has been added\nThis option provides a clear and direct way for users to edit their selected package. Placing the edit block below the \"Added\" block maintains visual continuity and guides users to the appropriate action without confusion on.\n\nAdding a navigate link below the \"Added\" block\nThis option offers a more subtle approach to indicating the edit option. While this option may provide a cleaner visual design, there is a risk that users may overlook or miss the link, especially if it is not clearly differentiated from surrounding elements.\n\n\nOur decision​\n\nOption 1 was chosen because it seamlessly integrates with the existing system. By placing the edit block below the \"Added\" block, we maintain consistency and familiarity for users. This ensures that users can easily locate and utilize the edit option without confusion. Overall, Option 1 provides a user-friendly solution that fits seamlessly within the existing interface, facilitating a smooth editing experience.\n\nII. Is a CTA necessary, or could it be replaced with a link?\n\nThe header within the builder interface is currently oversized, occupying too much space on the page. There is excessive white space between the supporting text, header, and buttons. Additionally, the 'Back to Shopping' button is highly prominent and redirects users to the home page when clicked. While it's essential to guide customers through the configuration process, we should offer them a way to backtrack without giving this option too much prominence.\n\nProposed solutions:\n• Shorten the header and ensure the sub-head text appears on a single line, reducing visual clutter and optimizing space utilization. By condensing the header, we improve the overall layout and enhance readability, aligning with the principle of simplicity in user interface design.\n• Consider removing or resizing the “Back to shopping” buton to reduce its prominence without compromising its functionality. This adjustment aims to strike a balance between providing users with the option to backtrack and minimizing distractions, thereby improving the user experience and encouraging users to focus on completing their configuration.\n\nAn optimizely test was done in June 2022 that tested removing the “Back to shopping” CTA and removing it actually reduced conversion rate, which is why the CTA was kept there following the test. A potential reason for this could have been the excessive empty blue space on the right since the text appears in 2 lines on the left. We could re-test with updating the spacing on the banner, or keeping the CTA but changing its size.\n\nOur decision​\n\nDeprioritizing the 'Back to TV Packages' option helps minimize decision points, improving user focus and speeding up the decision-making process. By reducing the number of available actions—especially removing an option that takes users backward—we streamline the flow and encourage forward momentum in the checkout process.\n\nHowever, to maintain usability without cluttering the primary action path, we could introduce a subtle, less prominent way for users to return to the TV package. This would allow users to proceed without distractions while still providing an option for those who wish to review their selections.\"\n\nIII. Simplify the channel selection interface for a more user-friendly experience.\n\nDuring our review of the channel selector in the Shaw Direct builder, we identified a significant usability issue. The presence of individual \"Add\" buttons for each channel creates visual clutter and confusion for users. Additionally, these CTAs closely resemble the primary conversion CTAs, leading to potential user errors and frustration.\n\nProposed solutions:\n• Explore replacing the “Add” CTAs with another design element to improve customer experience and make the page cleaner and easier to navigate\n• Implement a progress tracker for channel selection: Adding a progress tracker allows customers to track their progress as they add their favourite channels to their plan. This feature enhances transparency and provides users with a visual indicator of their progress, making the channel selection process more engaging and rewarding.\n • Revamp the channel selection interface with a counter: Instead of toggling between automatically selecting channels and manually selecting channels, introduce a counter to show users how many channels they have selected. This allows users to select some channels manually and then ask the system to fill in the remaining channels, providing greater flexibility and control over the selection process.\n\nThese UX improvements aim to streamline the channel selection process, reduce user effort, and enhance overall satisfaction with the Shaw Direct builder interface. By implementing these changes, we can create a more intuitive and user-friendly experience for customers, ultimately improving conversion rates and customer retention.\n\nOur decision​\n\nThe positive feedback on the proposal can be attributed to several key UX principles:\n\nProgressive Disclosure: The step-by-step indicator provides just the right amount of information at each stage of the plan builder, reducing cognitive load. Customers can focus on the current task while having a clear view of the overall process, making the experience feel less overwhelming.\nFeedback and Visibility of System Status: The progress indicator ensures customers are always informed about where they are in the journey and what steps remain. This transparency gives users a sense of control and reduces uncertainty, improving overall satisfaction.\nConsistency: A modern, cohesive design and intuitive interface build familiarity and trust. When users encounter a clean and predictable design, they feel more confident navigating and making decisions.\n\nThe design was approved and sent to the development team, but due to changes in the management team, a new direction was taken for this product. I also transitioned to another team, so only two other improvements were implemented on the live website.\n\nAt Shaw Direct, I frequently collaborated with the development team to navigate design constraints. Due to some circumstances, Shaw Direct wasn't a business priority, and the outdated CMS made building new components time-consuming. This created a balance between business goals and customer needs.\n\nAs a UX designer, I prioritize delivering the best customer experience while considering business constraints. User needs drive the solutions, and business needs act as boundaries. My approach focuses on feasibility, ROI, and balancing impact versus effort, both in building and long-term maintenance, to help stakeholders make informed decisions.\n\nGENEX Member Portal\nShaw Direct\nHuey Lam Digital Tailor Shop\nCalgary Silkscreen\nRogers Bank\nRogers Together with Shaw",
+  "title": "Shaw Direct – qxyxhdodesign"
+}

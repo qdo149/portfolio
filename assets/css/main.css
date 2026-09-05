@@ -148,6 +148,14 @@ main{padding-top:72px}
 .outcomes-grid h3{font:500 1rem/1.5 var(--sans);margin-bottom:6px}
 .outcomes-grid p:last-child{font-size:.875rem;color:var(--muted)}
 .case-tags{padding:32px 0;border-bottom:1px solid var(--line)}
+.legacy-case-content{display:block;max-width:100%}
+.legacy-case-content>h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;margin:88px 0 24px}
+.legacy-case-content>h3{font-family:var(--serif);font-size:clamp(1.45rem,2.5vw,2.2rem);line-height:1.15;margin:54px 0 18px}
+.legacy-case-content>p,.legacy-case-content>ul{max-width:760px;margin:0 0 22px;color:var(--muted);font-size:1.05rem;line-height:1.75}
+.legacy-case-content>ul{padding-left:1.4rem}
+.legacy-visual{margin:42px 0 70px}
+.legacy-visual img{display:block;width:100%;height:auto;background:var(--surface)}
+.legacy-visual figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-top:10px}
 .case-tags .tag-list li{background:none;border:1px solid var(--line)}
 .project-navigation{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:56px 0 88px}
 .project-navigation a{display:flex;flex-direction:column;padding:24px;border:1px solid var(--line);border-radius:12px;text-decoration:none}

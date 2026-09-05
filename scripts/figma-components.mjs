@@ -35,10 +35,24 @@ export function createComponents({ asset, esc, site }) {
     if (p.overview) blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><p class="case-lead">${esc(p.overview)}</p></section>`);
     if (p.problem) blocks.push(`<section class="case-section"><h2 class="eyebrow">The problem</h2><div class="prose"><p>${esc(p.problem)}</p></div></section>`);
     if (Array.isArray(p.summary) && p.summary.length) blocks.push(`<section class="case-section"><h2 class="eyebrow">Project details</h2><div class="prose">${p.summary.map(t=>`<p>${esc(t)}</p>`).join('')}</div></section>`);
+    if (p.legacyBlocks?.length) {
+      let listOpen = false;
+      const content = p.legacyBlocks.map(block => {
+        let html = '';
+        if (block.type !== 'li' && listOpen) { html += '</ul>'; listOpen = false; }
+        if (block.type === 'image') return html + `<figure class="legacy-visual"><img src="${esc(block.src)}" alt="${esc(block.alt || p.title + ' project visual')}" loading="lazy"><figcaption>${esc(block.alt || p.title + ' — project visual')}</figcaption></figure>`;
+        if (block.type === 'h2') return html + `<h2>${esc(block.text)}</h2>`;
+        if (block.type === 'h3') return html + `<h3>${esc(block.text)}</h3>`;
+        if (block.type === 'li') { if (!listOpen) { html += '<ul>'; listOpen = true; } return html + `<li>${esc(block.text)}</li>`; }
+        return html + `<p>${esc(block.text).replace(/\n/g,'<br>')}</p>`;
+      }).join('') + (listOpen ? '</ul>' : '');
+      blocks.push(`<section class="case-section case-section--wide legacy-case-content"><p class="eyebrow">Full case study</p>${content}</section>`);
+    }
     if (p.process?.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Process</h2><div class="process-grid">${p.process.map(step=>`<article><p class="eyebrow phase">${esc(step.phase)}</p><h3>${esc(step.title)}</h3><p>${esc(step.description)}</p></article>`).join('')}</div></section>`);
     if (gallery.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Visuals</h2><div class="gallery-grid">${gallery.map((img,i)=>`<figure class="gallery-item${i===0?' gallery-item--wide':''}"><div><img src="${esc(img.src)}" alt="${esc(img.alt||p.title+' artwork '+(i+1))}" loading="lazy"></div><figcaption><span>${esc(img.caption||p.title+' — selected work')}</span><span>${String(i+1).padStart(2,'0')}</span></figcaption></figure>`).join('')}</div></section>`);
     if (p.results?.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Outcomes</h2><div class="outcomes-grid">${p.results.map(r=>`<article><p class="result-value">${esc(r.value)}</p><h3>${esc(r.metric)}</h3><p>${esc(r.label)}</p></article>`).join('')}</div></section>`);
     const meta = [['Role',p.role],['Duration',p.duration],['Team',p.team],['Year',p.year]].filter(([,v])=>v);
+    p.image = p.coverImage || p.image;
     return `<article class="case-study"><div class="case-cover"${p.bg?` style="--project-bg:${esc(p.bg)}"`:''}>${p.image?`<img src="${esc(p.image)}" alt="${esc(p.title)} project overview" fetchpriority="high">`:''}<div class="case-cover-shade"></div><div class="case-cover-copy container"><a class="back-link" href="${asset(backHref)}">Back to ${esc(backLabel)}</a><p class="eyebrow">${esc(p.category)}${p.year?' · '+esc(p.year):''}</p><h1>${esc(p.title)}</h1></div></div><div class="case-facts-wrap"><dl class="case-facts container">${meta.map(([l,v])=>`<div><dt>${l}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl></div><div class="case-body container">${blocks.join('')}<div class="case-tags">${tags(p.tags)}</div><nav class="project-navigation" aria-label="Other projects">${prev?`<a href="${asset(prev.href)}"><span>Previous project</span><strong>${esc(prev.title)}</strong></a>`:'<div></div>'}${next?`<a href="${asset(next.href)}"><span>Next project</span><strong>${esc(next.title)}</strong></a>`:''}</nav></div></article>`;
   }
 
