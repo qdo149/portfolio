@@ -158,7 +158,7 @@ main{padding-top:72px}
 .legacy-visual{margin:32px 0 0}
 .legacy-visual img{display:block;width:100%;height:auto;background:var(--surface)}
 .legacy-visual figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-top:10px}
-.case-body:has(.nab-carousel-section){max-width:none;padding-inline:clamp(20px,2.4vw,34px)}
+.case-body:has(.nab-carousel-section){max-width:var(--max);padding-inline:var(--gutter)}
 .case-body:has(.nab-carousel-section) .case-overview{grid-template-columns:minmax(150px,.45fr) minmax(0,3fr);gap:clamp(28px,4vw,72px)}
 .case-body:has(.nab-carousel-section) .case-overview .prose,.case-body:has(.nab-carousel-section) .case-story-section>p{max-width:none}
 .nab-carousel-section{padding:32px 0 0}
