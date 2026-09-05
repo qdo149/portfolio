@@ -160,7 +160,9 @@ main{padding-top:72px}
 .legacy-visual figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-top:10px}
 .case-body:has(.legacy-case-content){max-width:var(--max);padding-inline:var(--gutter)}
 .case-body:has(.legacy-case-content) .case-overview{grid-template-columns:minmax(150px,.45fr) minmax(0,3fr);gap:clamp(28px,4vw,72px)}
-.case-body:has(.legacy-case-content) .case-overview .prose,.case-body:has(.legacy-case-content) .case-story-section>p{max-width:none}
+.case-body:has(.legacy-case-content) .case-overview .prose,
+.case-body:has(.legacy-case-content) .case-story-section>p,
+.case-body:has(.legacy-case-content) .case-story-section>ul{max-width:none}
 .genex-background-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(36px,6vw,96px);align-items:center;margin-top:38px}
 .genex-background-grid>.legacy-visual{margin:0}
 .genex-background-list{display:grid;gap:0}
