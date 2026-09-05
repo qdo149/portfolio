@@ -158,10 +158,10 @@ main{padding-top:72px}
 .legacy-visual{margin:32px 0 0}
 .legacy-visual img{display:block;width:100%;height:auto;background:var(--surface)}
 .legacy-visual figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-top:10px}
-.case-body:has(.nab-carousel-section){max-width:none;padding-inline:clamp(16px,2vw,28px)}
+.case-body:has(.nab-carousel-section){max-width:none;padding-inline:clamp(20px,2.4vw,34px)}
 .case-body:has(.nab-carousel-section) .case-overview{grid-template-columns:minmax(150px,.45fr) minmax(0,3fr);gap:clamp(28px,4vw,72px)}
 .case-body:has(.nab-carousel-section) .case-overview .prose,.case-body:has(.nab-carousel-section) .case-story-section>p{max-width:none}
-.nab-carousel-section{padding:64px 0 80px;border-bottom:1px solid var(--line)}
+.nab-carousel-section{padding:32px 0 0}
 .nab-carousel-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:26px}
 .nab-carousel-heading h2{font:400 clamp(2rem,4vw,3.5rem)/1.1 var(--serif)}
 .nab-carousel-heading p{font:400 .78rem/1.4 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}

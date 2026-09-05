@@ -32,7 +32,6 @@ export function createComponents({ asset, esc, site }) {
   function caseStudy(p, { prev, next, backHref = '/work/', backLabel = 'UI/UX Design' } = {}) {
     const gallery = p.gallery || [];
     const blocks = [];
-    if (p.caseCarousel?.length) blocks.push(`<section class="nab-carousel-section" aria-labelledby="nab-visuals-title"><div class="nab-carousel-heading"><h2 id="nab-visuals-title">Inside the work</h2><p>${p.caseCarousel.length} selected moments</p></div><div class="graphics-carousel-shell nab-carousel-shell" data-carousel><div class="graphics-carousel-stage"><button class="carousel-button carousel-button--previous" type="button" data-carousel-prev aria-label="Previous NAB image">←</button><div class="graphics-carousel nab-carousel" data-carousel-track tabindex="0" aria-label="NAB project images">${p.caseCarousel.map((image,index)=>`<figure class="nab-carousel-item" data-carousel-item><img src="${esc(image.src)}" alt="${esc(image.alt)}" loading="${index<3?'eager':'lazy'}"></figure>`).join('')}</div><button class="carousel-button carousel-button--next" type="button" data-carousel-next aria-label="Next NAB image">→</button></div><div class="carousel-pagination" aria-label="Choose an NAB image">${p.caseCarousel.map((_,index)=>`<button class="carousel-dot${index===0?' is-active':''}" type="button" data-carousel-dot="${index}" aria-label="View NAB image ${index+1}"${index===0?' aria-current="true"':''}></button>`).join('')}</div></div></section>`);
     if (p.legacyBlocks?.length) {
       blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><div class="prose">${(p.summary?.length?p.summary:[p.overview]).filter(Boolean).map(t=>`<p>${esc(t)}</p>`).join('')}</div></section>`);
     } else {
@@ -43,15 +42,21 @@ export function createComponents({ asset, esc, site }) {
     if (p.legacyBlocks?.length) {
       let listOpen = false;
       let sectionOpen = false;
+      let sectionHeading = '';
+      const sectionCarousel = heading => {
+        const carousel = p.caseCarousels?.find(item=>item.heading===heading);
+        if (!carousel) return '';
+        return `<div class="nab-carousel-section" aria-label="${esc(heading)} images"><div class="graphics-carousel-shell nab-carousel-shell" data-carousel><div class="graphics-carousel-stage"><button class="carousel-button carousel-button--previous" type="button" data-carousel-prev aria-label="Previous image">←</button><div class="graphics-carousel nab-carousel" data-carousel-track tabindex="0" aria-label="${esc(heading)} images">${carousel.images.map(image=>`<figure class="nab-carousel-item" data-carousel-item><img src="${esc(image.src)}" alt="${esc(image.alt)}" loading="lazy"></figure>`).join('')}</div><button class="carousel-button carousel-button--next" type="button" data-carousel-next aria-label="Next image">→</button></div><div class="carousel-pagination">${carousel.images.map((_,index)=>`<button class="carousel-dot${index===0?' is-active':''}" type="button" data-carousel-dot="${index}" aria-label="View image ${index+1}"${index===0?' aria-current="true"':''}></button>`).join('')}</div></div></div>`;
+      };
       const content = p.legacyBlocks.map(block => {
         let html = '';
         if (block.type !== 'li' && listOpen) { html += '</ul>'; listOpen = false; }
         if (block.type === 'image') return html + `<figure class="legacy-visual"><img src="${esc(block.src)}" alt="${esc(block.alt || p.title + ' project visual')}" loading="lazy">${block.alt?`<figcaption>${esc(block.alt)}</figcaption>`:''}</figure>`;
-        if (block.type === 'h2') { if (sectionOpen) html += '</section>'; sectionOpen = true; return html + `<section class="case-story-section"><h2>${esc(block.text)}</h2>`; }
+        if (block.type === 'h2') { if (sectionOpen) html += sectionCarousel(sectionHeading) + '</section>'; sectionOpen = true; sectionHeading = block.text; return html + `<section class="case-story-section"><h2>${esc(block.text)}</h2>`; }
         if (block.type === 'h3') return html + `<h3>${esc(block.text)}</h3>`;
         if (block.type === 'li') { if (!listOpen) { html += '<ul>'; listOpen = true; } return html + `<li>${esc(block.text)}</li>`; }
         return html + block.text.split(/\n{2,}/).filter(Boolean).map(text=>`<p>${esc(text.replace(/\s+/g,' ').trim())}</p>`).join('');
-      }).join('') + (listOpen ? '</ul>' : '') + (sectionOpen ? '</section>' : '');
+      }).join('') + (listOpen ? '</ul>' : '') + (sectionOpen ? sectionCarousel(sectionHeading) + '</section>' : '');
       blocks.push(`<section class="case-section case-section--wide legacy-case-content">${content}</section>`);
     }
     if (p.process?.length) blocks.push(`<section class="case-section case-section--wide"><h2 class="eyebrow">Process</h2><div class="process-grid">${p.process.map(step=>`<article><p class="eyebrow phase">${esc(step.phase)}</p><h3>${esc(step.title)}</h3><p>${esc(step.description)}</p></article>`).join('')}</div></section>`);

@@ -75,7 +75,10 @@ const productItems = projects.map(p => {
   return {...p, href:`/work/${p.slug}/`, category:m.sector, year:m.year, role:m.role,
     image:clean(p.cardImage||p.thumb), coverImage:originalHeroImages[p.slug], description:m.result, overview:m.result, tags:m.skills,
     gallery:p.slug==="nab"?[]:(original?.images||[]).map(image=>clean(image.src)).filter((src,i,all)=>src&&src!==clean(p.cardImage||p.thumb)&&!inlineImages.has(src)&&all.indexOf(src)===i).map(src=>({src})),
-    caseCarousel:p.slug==="nab"?(original?.images||[]).map(image=>({src:clean(image.src),alt:image.alt||"NAB project visual"})):[],
+    caseCarousels:p.slug==="nab"?[
+      {heading:"Accessibility Workshop for Engineering Teams",images:(original?.images||[]).slice(0,3).map(image=>({src:clean(image.src),alt:image.alt||"NAB accessibility workshop"}))},
+      {heading:"Design Starcamp — Design Thinking for Future Engineers",images:(original?.images||[]).slice(3,6).map(image=>({src:clean(image.src),alt:image.alt||"NAB Design Starcamp workshop"}))}
+    ]:[],
     legacyBlocks,
     summary:(p.summary||[]).map(t=>t.replace(/\s+/g," ").trim()).filter(Boolean)};
 });
