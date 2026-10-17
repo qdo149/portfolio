@@ -159,6 +159,7 @@ main{padding-top:72px}
 .legacy-visual img{display:block;width:100%;height:auto;background:var(--surface)}
 .legacy-visual figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-top:10px}
 .case-body:has(.legacy-case-content){max-width:var(--max);padding-inline:var(--gutter)}
+.case-study--genex .container{padding-inline:clamp(32px,7vw,96px)}
 .case-body:has(.legacy-case-content) .case-overview{grid-template-columns:minmax(150px,.45fr) minmax(0,3fr);gap:clamp(28px,4vw,72px)}
 .case-body:has(.legacy-case-content) .case-overview .prose,
 .case-body:has(.legacy-case-content) .case-story-section>p,
@@ -240,6 +241,7 @@ main{padding-top:72px}
   .case-cover-copy{padding-bottom:30px}
   .case-cover-copy h1{font-size:clamp(2.4rem,10vw,4.5rem)}
   .case-facts{grid-template-columns:1fr 1fr}
+  .case-study--genex .container{padding-inline:clamp(20px,6vw,32px)}
   .case-section{gap:24px;padding:44px 0}
   .process-grid article{padding:24px 0}
   .process-grid article:nth-child(odd){border-right:0}
