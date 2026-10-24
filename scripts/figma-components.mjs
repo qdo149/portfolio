@@ -70,7 +70,7 @@ export function createComponents({ asset, esc, site }) {
   }
 
   function aboutContent() {
-    return `<div class="about-grid"><div><h2>At the intersection of creativity and functionality.</h2><div class="prose"><p>${esc(site.about.bio)}</p><p>My graphic design background gives my product work a level of visual precision that’s hard to retrofit — I care as much about how something looks as how it works.</p><p>I’m currently studying software engineering to strengthen my technical foundation and expand my impact as a product designer.</p></div><div class="social-pills">${socials()}</div></div><figure class="about-portrait"><img src="${esc(site.assets.avatar)}" alt="Quynh Do" width="600" height="800" loading="lazy"><figcaption><span>Currently</span>Open to opportunities</figcaption></figure></div>`;
+    return `<div class="about-grid"><div><h2>At the intersection of creativity and functionality.</h2><div class="prose"><p>${esc(site.about.bio)}</p><p>My graphic design background gives my product work a level of visual precision that’s hard to retrofit — I care as much about how something looks as how it works.</p><p>I’m currently studying software engineering to strengthen my technical foundation and expand my impact as a product designer.</p></div><div class="social-pills">${socials()}</div></div><figure class="about-portrait"><img src="${asset(site.assets.about || site.assets.avatar)}" alt="Illustrated portrait of Quynh Do outside the Fairmont Palliser" width="1024" height="683" loading="lazy"><figcaption><span>Currently</span>Open to opportunities</figcaption></figure></div>`;
   }
 
   function home({ productCards }) {

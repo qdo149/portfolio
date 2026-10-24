@@ -80,7 +80,7 @@ main{padding-top:72px}
 .prose{color:var(--muted);font-size:1rem;line-height:1.85}
 .prose p+p{margin-top:24px}
 .about-portrait{position:relative;align-self:start}
-.about-portrait>img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px}
+.about-portrait>img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:16px}
 .about-portrait figcaption{position:absolute;bottom:20px;right:20px;padding:14px 20px;background:rgba(247,246,242,.94);border-radius:12px;border:1px solid var(--line);font-size:.875rem}
 .about-portrait figcaption span{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
 .social-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
