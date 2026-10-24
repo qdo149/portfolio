@@ -67,7 +67,7 @@ const productItems = projects.map(p => {
   const legacyBlocks = (original?.blocks||[]).filter((block,index)=>{
     if(index===0 && /^h[23]$/.test(block.type)) return false;
     if(block.type==="h2" && block.text.trim().toUpperCase()==="OVERVIEW") return false;
-    if(block.type==="li" && block.text.includes("\n")) return false;
+    if(p.slug==="genex-member-portal" && block.type==="li" && block.text.includes("\n")) return false;
     if(p.slug==="nab" && block.type==="image") return false;
     return true;
   });
@@ -80,7 +80,7 @@ const productItems = projects.map(p => {
       {heading:"Design Starcamp — Design Thinking for Future Engineers",images:(original?.images||[]).slice(3,6).map(image=>({src:clean(image.src),alt:image.alt||"NAB Design Starcamp workshop"}))}
     ]:[],
     legacyBlocks,
-    summary:(p.summary||[]).map(t=>t.replace(/\s+/g," ").trim()).filter(Boolean)};
+    summary:(p.summary||[]).map(t=>t.trim()).filter(Boolean)};
 });
 const graphicItems = graphicProjects.map(p => {
   const imported = figmaProjects.find(f=>f.slug === (p.slug === "genex-marketing" ? "genex" : p.slug));

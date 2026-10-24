@@ -127,7 +127,7 @@ main{padding-top:72px}
 .case-facts dt{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:5px}
 .case-facts dd{margin:0;font-size:.875rem;font-weight:500}
 .case-section{display:grid;grid-template-columns:1fr 2fr;gap:64px;padding:72px 0;border-bottom:1px solid var(--line)}
-.case-section h2.eyebrow{font-family:var(--sans);font-size:.8125rem}
+.case-section h2.eyebrow{font-family:var(--sans);font-size:.8125rem;font-weight:700}
 .case-lead{font:400 clamp(1.6rem,2.4vw,2.2rem)/1.4 var(--serif)}
 .case-section--wide{grid-template-columns:1fr;gap:36px}
 .process-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
@@ -151,10 +151,14 @@ main{padding-top:72px}
 .legacy-case-content{display:block;max-width:100%}
 .case-story-section{padding:72px 0;border-top:1px solid var(--line)}
 .case-story-section:first-child{padding-top:0;border-top:0}
-.case-story-section>h2{max-width:900px;font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);line-height:1.08;margin:0 0 24px}
-.case-story-section>h3{max-width:820px;font-family:var(--serif);font-size:clamp(1.45rem,2.5vw,2.2rem);line-height:1.2;margin:42px 0 18px}
+.case-story-section>h2{max-width:900px;font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;line-height:1.08;margin:0 0 24px}
+.case-story-section>h3{max-width:820px;font-family:var(--serif);font-size:clamp(1.45rem,2.5vw,2.2rem);font-weight:700;line-height:1.2;margin:42px 0 18px}
 .case-story-section>p,.case-story-section>ul{max-width:760px;margin:0 0 20px;color:var(--muted);font-size:1.05rem;line-height:1.75}
 .case-story-section>ul{padding-left:1.4rem}
+.case-story-section strong,.case-overview strong{font-weight:700;color:var(--ink)}
+.case-overview .prose>p{margin-bottom:18px}
+.case-overview .overview-list{margin:0 0 20px;padding-left:1.25rem;color:var(--muted)}
+.case-overview .overview-label{margin-bottom:8px}
 .legacy-visual{margin:32px 0 0}
 .legacy-visual img{display:block;width:100%;height:auto;background:var(--surface)}
 .legacy-visual figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-top:10px}

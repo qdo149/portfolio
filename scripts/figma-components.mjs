@@ -3,6 +3,58 @@
 export function createComponents({ asset, esc, site }) {
   const tags = (items = []) => `<ul class="tag-list" aria-label="Project skills">${items.map(tag => `<li>${esc(tag)}</li>`).join("")}</ul>`;
   const socials = () => `<a href="${esc(site.social.linkedin)}" target="_blank" rel="noopener">LinkedIn</a><a href="${esc(site.social.instagram)}" target="_blank" rel="noopener">Instagram</a><a href="${esc(site.social.email)}">Email</a>`;
+  const liveEmphasis = {
+    "rogers-bank":["Those unfamiliar with the Canadian credit system:","Those aware of credit but uncertain about building credit in Canada:","Mobile-optimized design:","Simplified forms:","August 2024","Have the UXR team conduct user testing","Track key metrics"],
+    "shaw-direct":["5.60% of customers exit the plan builder interface to revisit the packages page after their initial view.","Adding an edit block below the block indicating the package has been added","Adding a navigate link below the \"Added\" block","Shorten the header and ensure the sub-head text appears on a single line","Consider removing or resizing the “Back to shopping” buton","Explore replacing the “Add” CTAs with another design element","Implement a progress tracker for channel selection:","Revamp the channel selection interface with a counter:","Progressive Disclosure:","Feedback and Visibility of System Status:","Consistency:"],
+    "genex-member-portal":["Member Profiles:","News and Updates Section:","Community Forum:","Event Registration:","Modern, User-Friendly Design:","Responsive Design:","user satisfaction rate of over 85%.","20% increase in member engagement."],
+    "rogers-together-with-shaw":["UI/UX design","layout creation","photography selection","Self Protect","Home Security","MyShaw","removing redundant components","personalized messaging","easy navigation links"]
+  };
+
+  const inlineRichText = (p,text="") => {
+    const source=String(text).trim();
+    const phrases=[...(liveEmphasis[p.slug]||[])];
+    const lead=source.match(/^([^.!?]{1,60}:)\s+.+/)?.[1];
+    if(lead&&!phrases.includes(lead)) phrases.push(lead);
+    const matches=[];
+    phrases.sort((a,b)=>b.length-a.length).forEach(phrase=>{
+      let start=0,index;
+      while((index=source.indexOf(phrase,start))!==-1){
+        if(!matches.some(match=>index<match.end&&index+phrase.length>match.start)) matches.push({start:index,end:index+phrase.length});
+        start=index+phrase.length;
+      }
+    });
+    if(!matches.length) return esc(source);
+    matches.sort((a,b)=>a.start-b.start);
+    let cursor=0,html='';
+    matches.forEach(match=>{html+=esc(source.slice(cursor,match.start))+`<strong>${esc(source.slice(match.start,match.end))}</strong>`;cursor=match.end;});
+    return html+esc(source.slice(cursor));
+  };
+
+  const richBlocks = (p,text="") => String(text).split(/\n\s*\n/).map(part=>part.trim()).filter(Boolean).map(part=>{
+    const lines=part.split(/\n/).map(line=>line.trim()).filter(Boolean);
+    if(lines.length>1&&lines.every(line=>line.startsWith('•'))) return `<ul>${lines.map(line=>`<li>${inlineRichText(p,line.replace(/^•\s*/,''))}</li>`).join('')}</ul>`;
+    return `<p>${lines.map(line=>inlineRichText(p,line)).join('<br>')}</p>`;
+  }).join('');
+
+  const overviewContent = p => {
+    const labels=/^(Background|Company Background|Role|Team|Teams|Timeline|Skills?|Scope)$/i;
+    const tokens=(p.summary?.length?p.summary:[p.overview]).filter(Boolean).flatMap(text=>String(text).split(/\n+/).map(line=>line.trim()).filter(Boolean));
+    let html='';
+    for(let i=0;i<tokens.length;i++){
+      const token=tokens[i];
+      if(token.startsWith('•')){
+        const items=[];
+        while(i<tokens.length&&tokens[i].startsWith('•')){items.push(tokens[i].replace(/^•\s*/,''));i++;}
+        i--;
+        html+=`<ul class="overview-list">${items.map(item=>`<li>${inlineRichText(p,item)}</li>`).join('')}</ul>`;
+      }else if(labels.test(token)){
+        const next=tokens[i+1];
+        if(next&&!labels.test(next)&&!next.startsWith('•')){html+=`<p><strong>${esc(token)}:</strong> ${inlineRichText(p,next)}</p>`;i++;}
+        else html+=`<p class="overview-label"><strong>${esc(token)}:</strong></p>`;
+      }else html+=`<p>${inlineRichText(p,token)}</p>`;
+    }
+    return html;
+  };
 
   function shell({ title, active, body, description = site.hero.intro }) {
     const links = [["work", "/work/", "UI/UX Design"], ["graphics", "/graphics/", "Graphic Design"], ["about", "/about/", "About"]];
@@ -33,7 +85,7 @@ export function createComponents({ asset, esc, site }) {
     const gallery = p.gallery || [];
     const blocks = [];
     if (p.legacyBlocks?.length) {
-      blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><div class="prose">${(p.summary?.length?p.summary:[p.overview]).filter(Boolean).map(t=>`<p>${esc(t)}</p>`).join('')}</div></section>`);
+      blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><div class="prose">${overviewContent(p)}</div></section>`);
     } else {
       if (p.overview) blocks.push(`<section class="case-section case-overview"><h2 class="eyebrow">Overview</h2><p class="case-lead">${esc(p.overview)}</p></section>`);
       if (p.problem) blocks.push(`<section class="case-section"><h2 class="eyebrow">The problem</h2><div class="prose"><p>${esc(p.problem)}</p></div></section>`);
@@ -41,7 +93,7 @@ export function createComponents({ asset, esc, site }) {
     }
     if (p.legacyBlocks?.length) {
       const figure = block => `<figure class="legacy-visual"><img src="${esc(block.src)}" alt="${esc(block.alt || p.title + ' project visual')}" loading="lazy">${block.alt?`<figcaption>${esc(block.alt)}</figcaption>`:''}</figure>`;
-      const paragraph = block => `<p>${esc(block.text.replace(/\s+/g,' ').trim())}</p>`;
+      const paragraph = block => richBlocks(p,block.text);
       const genexLayout = () => {
         const source = p.legacyBlocks;
         const at = heading => source.findIndex(block => block.type === 'h2' && block.text.replace(/\s+/g,' ').trim() === heading);
@@ -53,7 +105,7 @@ export function createComponents({ asset, esc, site }) {
             if (block.type !== 'li' && listOpen) { html += '</ul>'; listOpen = false; }
             if (block.type === 'image') return html + figure(block);
             if (block.type === 'h2') return html + `<h3>${esc(block.text)}</h3>`;
-            if (block.type === 'li') { if (!listOpen) { html += '<ul>'; listOpen = true; } return html + `<li>${esc(block.text)}</li>`; }
+            if (block.type === 'li') { if (!listOpen) { html += '<ul>'; listOpen = true; } return html + `<li>${inlineRichText(p,block.text)}</li>`; }
             return html + paragraph(block);
           }).join('') + (listOpen ? '</ul>' : '');
           return `<section class="case-story-section"><h2>${esc(heading)}</h2>${body}</section>`;
@@ -74,10 +126,10 @@ export function createComponents({ asset, esc, site }) {
         const roadmapText = roadmap.find(block=>block.type==='p');
         const roadmapImages = roadmap.filter(block=>block.type==='image');
         const insight = section('III. Key Insights from User Research','IV. Building Sitemap​');
-        return `<section class="case-story-section genex-background"><h2>Client Background</h2>${paragraph(backgroundIntro)}<div class="genex-background-grid">${figure(backgroundImage)}<div class="genex-background-list">${backgroundItems.map(item=>`<article><h3>${esc(item.heading)}</h3><p>${esc(item.text)}</p></article>`).join('')}</div></div></section>`+
+        return `<section class="case-story-section genex-background"><h2>Client Background</h2>${paragraph(backgroundIntro)}<div class="genex-background-grid">${figure(backgroundImage)}<div class="genex-background-list">${backgroundItems.map(item=>`<article><h3>${esc(item.heading)}</h3><p>${inlineRichText(p,item.text)}</p></article>`).join('')}</div></div></section>`+
           standard('Project Scope','DESIGN PROCESS​')+
           `<section class="case-story-section genex-section-label"><h2>DESIGN PROCESS</h2></section>`+
-          `<section class="case-story-section genex-goals"><h2>I. Defining Business Goals</h2>${goals[0]?.type==='p'?paragraph(goals[0]):''}<div class="genex-goal-grid">${goalItems.map(item=>`<article>${figure(item.image)}<h3>${esc(item.heading)}</h3><p>${esc(item.text)}</p></article>`).join('')}</div></section>`+
+          `<section class="case-story-section genex-goals"><h2>I. Defining Business Goals</h2>${goals[0]?.type==='p'?paragraph(goals[0]):''}<div class="genex-goal-grid">${goalItems.map(item=>`<article>${figure(item.image)}<h3>${esc(item.heading)}</h3><p>${inlineRichText(p,item.text)}</p></article>`).join('')}</div></section>`+
           `<section class="case-story-section"><h2>II. Building Digital Roadmap</h2>${roadmapText?paragraph(roadmapText):''}<div class="genex-roadmap" aria-label="Four phases of the digital roadmap">${roadmapImages.map(figure).join('')}</div></section>`+
           `<section class="case-story-section genex-insight"><div><h2>III. Key Insights from User Research</h2>${insight.filter(block=>block.type==='p').map(paragraph).join('')}</div>${insight.filter(block=>block.type==='image').map(figure).join('')}</section>`+
           standard('IV. Building Sitemap​','V. Wireframes')+
@@ -107,8 +159,13 @@ export function createComponents({ asset, esc, site }) {
         if (block.type === 'image') return html + `<figure class="legacy-visual"><img src="${esc(block.src)}" alt="${esc(block.alt || p.title + ' project visual')}" loading="lazy">${block.alt?`<figcaption>${esc(block.alt)}</figcaption>`:''}</figure>`;
         if (block.type === 'h2') { if (sectionOpen) html += sectionCarousel(sectionHeading) + '</section>'; sectionOpen = true; sectionHeading = block.text; return html + `<section class="case-story-section"><h2>${esc(block.text)}</h2>`; }
         if (block.type === 'h3') return html + `<h3>${esc(block.text)}</h3>`;
-        if (block.type === 'li') { if (!listOpen) { html += '<ul>'; listOpen = true; } return html + `<li>${esc(block.text)}</li>`; }
-        return html + block.text.split(/\n{2,}/).filter(Boolean).map(text=>`<p>${esc(text.replace(/\s+/g,' ').trim())}</p>`).join('');
+        if (block.type === 'li') {
+          if (!listOpen) { html += '<ul>'; listOpen = true; }
+          const lines=block.text.split(/\n+/).map(line=>line.trim()).filter(Boolean);
+          const item=lines.length>1?`<strong>${esc(lines[0])}</strong><br>${lines.slice(1).map(line=>inlineRichText(p,line)).join('<br>')}`:inlineRichText(p,lines[0]||'');
+          return html + `<li>${item}</li>`;
+        }
+        return html + richBlocks(p,block.text);
       }).join('') + (listOpen ? '</ul>' : '') + (sectionOpen ? sectionCarousel(sectionHeading) + '</section>' : '');
       blocks.push(`<section class="case-section case-section--wide legacy-case-content">${content}</section>`);
       }
