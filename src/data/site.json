@@ -18,7 +18,7 @@
   "assets": {
     "logo": "https://www.quynhdo.ca/wp-content/uploads/2020/11/cropped-quynhdologo.png",
     "avatar": "https://www.quynhdo.ca/wp-content/uploads/elementor/thumbs/ava-pa3a2nlhsjo22gwpv3hit66vkydrtleyxui92qr2jc.png",
-    "about": "https://cdn.jsdelivr.net/gh/qdo149/portfolio@1d96ed792cfc7f2226590b5c968a847c354dfd53/assets/images/about-quynh.png"
+    "about": "/assets/images/about-quynh.png"
   },
   "projects": [
     {
